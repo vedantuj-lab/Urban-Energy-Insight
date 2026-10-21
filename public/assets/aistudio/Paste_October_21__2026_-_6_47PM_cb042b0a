@@ -1,0 +1,1302 @@
+Bro, no need to say sorry! ❤️ I understand what you want now. You want to start UrbanEnergy Insight completely from scratch, not repair the previous project.
+
+Since your submission is tomorrow, the best approach is to build a fresh, polished, functional MVP with a manageable number of important features. It should look like a premium product, have four genuinely different role-based dashboards, use a real database, include interactive maps, and demonstrate a complete energy-data workflow.
+
+I've prepared the master prompt specifically for Google AI Studio. It instructs the AI to create a new project without importing anything from your old solution.
+
+1. Final project plan
+Project name: UrbanEnergy Insight
+
+Tagline: Understand Your Energy. Find the Problem. Improve It.
+
+Project objective: Develop a software-based urban residential energy analytics platform that helps users upload energy-consumption data, identify high-consumption areas, compare trends, understand unusual patterns, and plan evidence-based improvements.
+
+The four login accounts
+
+I recommend four user roles and four separate dashboards, with one shared authentication system. This avoids maintaining four different authentication implementations while providing a distinct experience for every role.
+
+Role	Dashboard	Primary purpose	Theme
+Energy Analyst	Energy Intelligence Center	Analyze consumption and compare urban areas	Emerald, mint and forest green
+Data Contributor	Energy Data Workspace	Upload, validate and manage datasets	Cyan, turquoise and blue
+Energy Planner	Urban Planning Studio	Prioritize areas and manage improvement plans	Amber, coral and orange
+Administrator	System Control Center	Manage users, permissions and system health	Midnight navy, violet and silver
+
+Each role will have its own login appearance, background image, navigation, dashboard, and authorized features.
+
+Essential features only
+
+To keep the project achievable by tomorrow, concentrate on:
+
+Premium landing page with realistic city imagery.
+Four role-specific login experiences.
+Secure authentication and separate dashboards.
+PostgreSQL database integration.
+CSV energy-data upload and validation.
+Interactive Leaflet map.
+Consumption analytics and area comparison.
+High-consumption detection using transparent statistical rules.
+Data-quality monitoring.
+Explainable recommendations and priority assessment.
+Basic planning actions and milestones.
+Reports and CSV export.
+Responsive design and useful error handling.
+
+Leave out for now: complex AI models, digital twins, IoT hardware, elaborate animations, multiple authentication systems, and unconfigured live electricity integrations. These add complexity without being necessary to demonstrate your core solution.
+
+2. Complete Google AI Studio master prompt
+
+Copy everything inside the prompt below and paste it into Google AI Studio.
+
+The prompt explicitly requires a completely new project, new files, a simple architecture, four distinct dashboards, functional controls, and a testing process.
+
+UrbanEnergy Insight — Google AI Studio Complete Master Prompt
+URBANENERGY INSIGHT
+Complete Greenfield Project Development Specification
+1. YOUR ROLE
+
+Act as a senior full-stack software engineer, software architect, UI/UX designer, database engineer, and QA engineer.
+
+Your task is to build an entirely NEW application named UrbanEnergy Insight from the ground up.
+
+This is a greenfield project.
+
+I explicitly DO NOT want to repair, extend, copy, reuse, import, or modify my previous UrbanEnergy Insight implementation.
+
+Create a completely independent solution with its own source code, folder structure, components, pages, database schema, authentication implementation, styling, and documentation.
+
+2. STRICT GREENFIELD REQUIREMENTS
+
+Start with a new, empty project workspace.
+
+Do not use or import:
+
+Source code from the previous solution.
+Previous project components.
+Previous project folders.
+Previous stylesheets.
+Previous authentication logic.
+Previous dashboard implementations.
+Previous database schemas or migrations.
+Previous API handlers.
+Previous assets.
+Previous configuration files.
+Previous build output.
+Previous mock data files.
+Previous package manifests.
+
+Do not scan or copy the old project's implementation into this application.
+
+Use the project name UrbanEnergy Insight, the requirements specified in this prompt, and the general research motivation described below as the product specification.
+
+Create every implementation file from scratch.
+
+Use new, clearly organized code and a small, maintainable architecture.
+
+Do not create multiple alternative implementations of the same feature.
+
+Do not create placeholder pages that merely display a title.
+
+The application must be functional, not just visually impressive.
+
+If Google AI Studio cannot create or run a particular backend service in its current environment, implement the appropriate source code where possible and clearly document the external setup required. Never claim an external service is running unless verified.
+
+3. PROJECT OVERVIEW
+
+Project name:
+UrbanEnergy Insight
+
+Tagline:
+Understand Your Energy. Find the Problem. Improve It.
+
+Category:
+Urban sustainability, urban residential energy analytics, and data-driven planning.
+
+Problem statement:
+Urban residential energy records can be difficult to interpret. Users need a straightforward way to organize records, compare consumption across urban areas, identify unusually high observations, assess data quality, and turn findings into practical planning activities.
+
+Primary objective:
+Build a software-based platform that transforms energy-consumption records into understandable analytics, high-consumption observations, geographic visualizations, and practical planning insights.
+
+The project must not require physical sensors, IoT devices, or hardware.
+
+Use conventional programming, SQL, and transparent statistical calculations for the initial implementation.
+
+Do not require machine learning, large language models, or retrieval-augmented generation for the core application.
+
+4. TECHNOLOGY STACK
+
+Use a simple, coherent, maintainable stack.
+
+Frontend:
+
+React.
+TypeScript.
+Vite.
+React Router.
+CSS Modules or a consistent global CSS and component styling system.
+Lucide React icons, if compatible with the environment.
+Recharts for charts.
+
+Backend:
+
+Node.js.
+Express.
+TypeScript where practical.
+REST APIs.
+Server-side validation.
+Authentication middleware.
+Role-based authorization.
+
+Database:
+
+PostgreSQL.
+Parameterized SQL.
+Controlled migrations.
+Foreign keys and appropriate indexes.
+
+Maps:
+
+Leaflet.
+React Leaflet if using React.
+An appropriate real-world tile provider with attribution.
+
+Testing:
+
+Vitest for frontend or unit tests where practical.
+Supertest for backend API tests.
+Playwright for browser tests if available.
+
+Use stable, compatible package versions.
+
+Avoid unnecessary dependencies.
+
+Do not introduce a second frontend framework or a second backend framework.
+
+If the environment does not support PostgreSQL or a persistent backend directly, explain the limitation and create a clean backend integration that can connect to PostgreSQL. Do not silently substitute localStorage for the authoritative database.
+
+5. NEW PROJECT STRUCTURE
+
+Create a fresh structure similar to:
+
+urbanenergy-insight/
+frontend/
+public/
+images/
+src/
+app/
+components/
+layouts/
+pages/
+features/
+services/
+hooks/
+context/
+routes/
+styles/
+types/
+utils/
+package.json
+backend/
+src/
+config/
+middleware/
+routes/
+controllers/
+services/
+validation/
+server.ts
+migrations/
+seeds/
+tests/
+package.json
+.env.example
+.gitignore
+package.json
+README.md
+
+Adjust the structure if necessary, but keep it simple.
+
+Create one implementation for each major feature.
+
+Do not duplicate components, pages, routes, or styles.
+
+6. DESIGN SYSTEM
+
+The application must look premium, aesthetic, modern, professional, and suitable for an academic project demonstration.
+
+Use a unified design system with a different accent palette for each role.
+
+Brand colors:
+
+Deep Forest: #063B2F
+Emerald: #059669
+Jade: #10B981
+Turquoise: #14B8A6
+Electric Cyan: #06B6D4
+Lime: #A3E635
+Warm Orange: #F97316
+Coral: #FB7185
+Gold: #FBBF24
+Midnight Navy: #111827
+Indigo: #4338CA
+Violet: #8B5CF6
+Cloud White: #F8FAFC
+Soft Ivory: #FFFBF5
+Slate: #64748B
+Error Red: #DC2626
+Success Green: #047857
+
+Use forest green and emerald as the main brand identity.
+
+Use:
+
+Refined typography.
+Consistent spacing.
+Clear page hierarchy.
+Rounded cards.
+Restrained shadows.
+Subtle gradients.
+Professional charts.
+Attractive data tables.
+Accessible color contrast.
+Responsive navigation.
+Subtle transitions.
+Visible keyboard focus states.
+
+Use Inter for general UI and Manrope for prominent headings if compatible with the environment.
+
+Avoid excessive animations, oversized blank spaces, random gradients, decorative cards without functionality, and unnecessary visual clutter.
+
+7. REALISTIC IMAGES
+
+Use realistic urban residential imagery.
+
+Required image categories:
+
+Urban residential buildings.
+City skylines.
+Modern sustainable architecture.
+Urban neighborhoods.
+Energy-efficient buildings.
+Data and energy-analysis visual elements.
+
+The landing page must include a prominent realistic city or residential-building image.
+
+Each of the four login experiences must have a distinct background image appropriate to its role.
+
+Each feature page should have its own relevant background asset or a unique, carefully designed gradient fallback.
+
+Do not reuse the same background image on every page.
+
+Avoid putting busy images behind data tables or forms.
+
+Keep all essential text readable using dark overlays or suitable light surfaces.
+
+Prefer locally stored, appropriately licensed images or generated image assets.
+
+Do not make the entire application dependent on an unreliable external image URL.
+
+If an image cannot load, display an attractive gradient fallback.
+
+Use descriptive alt text and sensible image sizing.
+
+Do not use fabricated photographs of identifiable real buildings as evidence of actual energy performance.
+
+8. PUBLIC LANDING PAGE
+
+The root route / must open the public landing page.
+
+It must not redirect unauthenticated visitors to a dashboard.
+
+The landing page must render independently of dashboard APIs.
+
+Navigation
+
+Include:
+
+Brand logo.
+Home.
+Features.
+How It Works.
+Research.
+User Roles.
+Sign In.
+Get Started.
+
+All navigation items must work.
+
+Use smooth scrolling for section links where appropriate.
+
+The Sign In button must open the authentication page.
+
+Hero
+
+Headline:
+"Make Energy Simple."
+
+Supporting line:
+"See the city. Understand the energy. Plan a smarter future."
+
+Description:
+"UrbanEnergy Insight transforms urban residential energy records into clear analytics, high-consumption observations, and practical efficiency-planning insights."
+
+Buttons:
+
+Explore the Platform.
+Discover How It Works.
+
+The hero must use a balanced two-column layout.
+
+The visual side should contain a polished energy dashboard preview with:
+
+A small consumption chart.
+An anomaly indicator.
+A data-quality indicator.
+A map preview.
+A priority summary.
+
+Do not present demonstration numbers as actual live measurements.
+
+Label demonstration content clearly.
+
+Features section
+
+Create functional feature cards for:
+
+Consumption Analytics.
+Interactive Geographic Maps.
+Data Upload and Validation.
+High-Consumption Detection.
+Area Comparison.
+Explainable Findings.
+Priority Assessment.
+Efficiency Recommendations.
+Planning Actions.
+Reports and Exports.
+
+Each card must have an icon, title, short description, and consistent styling.
+
+Cards should navigate to a real implemented feature when appropriate.
+
+How It Works section
+
+Display five clear steps:
+
+Upload energy records.
+Validate and store the data.
+Analyse consumption.
+Compare and investigate areas.
+Plan improvements and generate reports.
+
+Use a responsive timeline or connected step cards.
+
+Research section
+
+Explain that the project integrates data ingestion, validation, consumption analysis, high-consumption identification, interpretation, prioritization, and planning into one accessible workflow.
+
+Describe this as the project's intended contribution.
+
+Do not claim that the application has proven to solve a research gap without evaluation.
+
+User roles section
+
+Explain the four roles and their individual responsibilities.
+
+Final call to action
+
+Include a professional CTA that opens Sign In.
+
+Footer
+
+Include project name, navigation, research context, and applicable privacy information.
+
+Every section must be visible through normal scrolling.
+
+9. FOUR LOGIN EXPERIENCES
+
+Implement exactly FOUR role experiences using ONE authentication system and ONE canonical login route.
+
+The user should not need four unrelated authentication implementations.
+
+Use role-specific visual themes and background imagery.
+
+LOGIN 1: ENERGY ANALYST
+
+Role identifier:
+energy_analyst
+
+Theme:
+Emerald, mint, lime, forest green.
+
+Background:
+A realistic urban skyline with restrained energy-analysis visuals.
+
+Heading:
+"See Beyond the Numbers."
+
+Description:
+"Explore energy patterns, compare urban areas, and investigate unusual consumption."
+
+Features after login:
+
+Consumption Overview.
+Energy Trends.
+Area Comparison.
+High-Consumption Zones.
+Analytical Reports.
+LOGIN 2: DATA CONTRIBUTOR
+
+Role identifier:
+data_contributor
+
+Theme:
+Cyan, turquoise, pale blue, slate.
+
+Background:
+A modern digital data workspace or urban data-management scene.
+
+Heading:
+"Make Every Record Count."
+
+Description:
+"Upload, validate, correct, and manage energy datasets."
+
+Features after login:
+
+Contributor Dashboard.
+Dataset Upload.
+Data Quality Validation.
+Dataset Management.
+Data Correction.
+Import History.
+LOGIN 3: ENERGY PLANNER
+
+Role identifier:
+energy_planner
+
+Theme:
+Amber, orange, coral, gold.
+
+Background:
+An urban planning scene with residential buildings and city infrastructure.
+
+Heading:
+"Turn Insight Into Action."
+
+Description:
+"Prioritize areas, create improvement actions, and track planning progress."
+
+Features after login:
+
+Planning Dashboard.
+Priority Assessment.
+Efficiency Recommendations.
+Action Planning.
+Implementation Timeline.
+Planning Reports.
+LOGIN 4: ADMINISTRATOR
+
+Role identifier:
+administrator
+
+Theme:
+Midnight navy, violet, indigo, silver.
+
+Background:
+A sophisticated administrative control environment with subtle city imagery.
+
+Heading:
+"Control With Confidence."
+
+Description:
+"Manage authorized users, permissions, settings, and system integrity."
+
+Features after login:
+
+System Dashboard.
+User Management.
+Roles and Permissions.
+System Configuration.
+Audit Logs.
+System Health.
+Shared login form
+
+Include:
+
+Email.
+Password.
+Password visibility toggle.
+Sign In button.
+Loading state.
+Inline validation.
+Accessible error messages.
+
+Provide a role selector or role-specific sign-in entry point if useful, but derive the actual authenticated role from the trusted backend response.
+
+Never trust a role chosen by the frontend as proof of authorization.
+
+Do not create four different backend authentication systems.
+
+After login, redirect to the appropriate dashboard.
+
+10. DEMO ACCOUNTS
+
+Create a development-only seed script.
+
+Use these development accounts:
+
+Energy Analyst:
+analyst@demo.local
+
+Data Contributor:
+contributor@demo.local
+
+Energy Planner:
+planner@demo.local
+
+Administrator:
+admin@demo.local
+
+Development password:
+demo123
+
+Requirements:
+
+Hash passwords securely.
+Create users only when they do not already exist.
+Never duplicate accounts.
+Preserve existing records.
+Disable demo-account helpers in production.
+Never expose production credentials.
+Do not bypass authentication.
+
+If the actual runtime environment cannot connect to PostgreSQL, clearly explain what is missing rather than pretending the accounts are database-backed.
+
+11. AUTHENTICATION AND SESSION MANAGEMENT
+
+Implement:
+
+POST /api/auth/login
+GET /api/auth/me
+POST /api/auth/logout
+
+Add registration only if needed and implemented safely.
+
+Use an explicit authentication state:
+
+Initializing.
+Unauthenticated.
+Authenticated.
+
+On page load:
+
+Initialize authentication state.
+Check the established session.
+Retrieve the user profile.
+Resolve the trusted backend role.
+Finish initialization.
+Render the correct route.
+
+Do not redirect to Sign In before session initialization completes.
+
+Use secure, HTTP-only cookies when appropriate.
+
+Configure cookie security, SameSite behavior, CORS, and credentials correctly.
+
+Use secure password hashing and environment-based secrets.
+
+Handle invalid credentials, expired sessions, network errors, and unauthorized access correctly.
+
+Do not store production passwords in localStorage.
+
+Do not use fake authentication.
+
+12. FOUR DASHBOARDS
+
+Every role must have a distinct dashboard and navigation system.
+
+ENERGY ANALYST DASHBOARD
+
+Title:
+Energy Intelligence Center.
+
+Features:
+
+Consumption overview.
+Total consumption.
+Average consumption.
+Number of distinct areas.
+Reporting period.
+Consumption trends.
+Area comparison.
+Interactive Leaflet map.
+High-consumption observations.
+Data-quality summary.
+Analytical reports.
+
+All metrics must come from actual stored data.
+
+DATA CONTRIBUTOR DASHBOARD
+
+Title:
+Energy Data Workspace.
+
+Features:
+
+Upload dataset.
+Preview records.
+Map columns.
+Validate records.
+Review invalid rows.
+Correct supported data fields.
+Browse datasets.
+View import history.
+See processing errors.
+
+Show actual import statuses and database results.
+
+ENERGY PLANNER DASHBOARD
+
+Title:
+Urban Energy Planning Studio.
+
+Features:
+
+Priority assessment.
+Supporting observations.
+Recommendations.
+Create planning actions.
+Assign priority.
+Set due dates.
+Create milestones.
+Update progress.
+View implementation timeline.
+Generate planning reports.
+
+Actions and milestones must persist in PostgreSQL.
+
+ADMINISTRATOR DASHBOARD
+
+Title:
+System Control Center.
+
+Features:
+
+User management.
+Role and permission management.
+System configuration.
+Audit logs.
+Backend health.
+Database health.
+Dataset processing status.
+Recent operational errors.
+
+Restrict sensitive actions to authorized administrators.
+
+Do not expose secrets, passwords, or private data in the dashboard.
+
+13. DATABASE
+
+Use PostgreSQL as the authoritative persistent database.
+
+Create a fresh schema for this new project.
+
+Suggested tables:
+
+users.
+urban_areas.
+datasets.
+energy_records.
+validation_results.
+import_history.
+planning_actions.
+planning_milestones.
+audit_logs.
+application_settings.
+
+Add foreign keys, unique constraints, check constraints, timestamps, and indexes where appropriate.
+
+Do not add unnecessary tables.
+
+Use parameterized SQL.
+
+Use transactions for imports and multi-step writes.
+
+Create migrations and a development seed script.
+
+Do not silently switch to mock data if PostgreSQL fails.
+
+Create .env.example with placeholders only.
+
+Never commit real secrets.
+
+14. CSV DATA UPLOAD
+
+Implement a complete dataset-upload workflow.
+
+Required flow:
+
+Select or drag in a CSV file.
+Validate its type and size.
+Parse the file safely.
+Display column names.
+Preview records.
+Allow column mapping.
+Validate required fields.
+Check numeric values.
+Validate dates and units.
+Identify missing values.
+Identify duplicate records.
+Display row-level errors.
+Let the user review corrections.
+Confirm import.
+Persist approved records.
+Save import history.
+Refresh the dashboard from the database.
+
+Recommended fields:
+
+Area identifier.
+Observation date.
+Consumption value.
+Consumption unit.
+Optional building category.
+
+Adapt requirements to the actual uploaded file.
+
+Do not assume every dataset contains geographic coordinates, floor area, occupancy, or temperature.
+
+Do not silently discard invalid records.
+
+Do not report success until the database confirms the import.
+
+Support Excel only if it can be implemented and tested within the available time.
+
+15. DATA QUALITY
+
+Show:
+
+Total rows.
+Valid rows.
+Invalid rows.
+Missing values.
+Duplicate records.
+Invalid dates.
+Invalid numeric values.
+Unsupported units.
+Unknown area identifiers.
+
+Allow authorized correction of supported fields.
+
+Preserve original values or correction history where appropriate.
+
+Do not silently invent missing values.
+
+If a geographic name is missing, show "Unknown area" and flag the data-quality issue.
+
+16. LEAFLET MAP
+
+Implement a functional interactive Leaflet map.
+
+Use a genuine geographic tile provider and proper attribution.
+
+Map features:
+
+Pan.
+Zoom.
+Area or building markers.
+Selection.
+Detail panel.
+Consumption visualization.
+High-consumption highlighting.
+Priority indicators.
+Legend.
+Filters.
+Loading state.
+Empty state.
+Error state.
+
+Use real coordinates from verified records.
+
+If coordinates are absent, do not invent them.
+
+The map must not be a static screenshot.
+
+Respect the tile provider's usage policy and caching rules.
+
+Clearly distinguish demonstration locations from verified locations.
+
+17. CONSUMPTION ANALYTICS
+
+Use conventional programming and transparent statistical calculations.
+
+Implement:
+
+Total consumption.
+Average consumption.
+Median where useful.
+Minimum and maximum.
+Consumption trends.
+Area comparison.
+Period-to-period change.
+High-consumption identification.
+Data-quality summaries.
+
+Use consistent units and reporting periods.
+
+Calculate area counts using distinct area identifiers, not energy-record counts.
+
+Do not confuse peak demand with total consumption.
+
+Do not mix Wh and kWh without explicit conversion.
+
+Explain the formula used for each important metric.
+
+18. HIGH-CONSUMPTION IDENTIFICATION
+
+Implement a simple, explainable statistical method.
+
+Possible methods:
+
+Comparison against the median of comparable areas.
+A configurable percentile threshold.
+A documented baseline-deviation rule.
+
+Select one appropriate method and document it.
+
+Show:
+
+Observed consumption.
+Comparison baseline.
+Threshold.
+Reporting period.
+Reason for flagging.
+
+A high-consumption observation is not proof of inefficiency or equipment failure.
+
+Do not invent causal explanations.
+
+19. PRIORITY ASSESSMENT AND RECOMMENDATIONS
+
+Use transparent rules based on supported data.
+
+Priority assessment may consider:
+
+High consumption relative to a comparable baseline.
+Repeated high-consumption observations.
+Data-quality concerns requiring investigation.
+
+Explain how the priority is calculated.
+
+Recommendations should be practical and evidence-informed.
+
+Examples:
+
+Review unusually high recorded consumption.
+Investigate missing records.
+Compare comparable area categories.
+Examine historical changes.
+Consider an energy-efficiency assessment.
+
+Do not guarantee savings.
+
+Do not generate unsupported percentages or fabricated cost reductions.
+
+20. PLANNING ACTIONS AND MILESTONES
+
+Allow planners to:
+
+Create an action.
+Enter a title and description.
+Link it to an area.
+Set a priority.
+Set a target date.
+Assign a status.
+Add milestones.
+Update progress.
+Review completed and overdue activities.
+
+Suggested statuses:
+
+Proposed.
+Planned.
+In Progress.
+Completed.
+On Hold.
+
+Validate inputs and persist all changes.
+
+21. REPORTS AND EXPORTS
+
+Implement real CSV exports.
+
+Analyst reports should include:
+
+Reporting period.
+Data source.
+Total consumption.
+Average consumption.
+Area comparisons.
+Findings.
+Data limitations.
+
+Planning reports should include:
+
+Priority areas.
+Supporting evidence.
+Recommendations.
+Actions.
+Milestones.
+Progress.
+
+Generate downloadable files containing actual data.
+
+Do not display success messages when a download was not created.
+
+Implement PDF exports only if time and dependencies permit reliable testing.
+
+22. REAL-TIME DATA
+
+Do not fabricate live electricity data.
+
+The application must distinguish:
+
+Historical energy data.
+Calculated metrics.
+External contextual data.
+Demonstration fixtures.
+Genuine live energy readings.
+
+Historical records must come from verified database imports.
+
+A live energy reading requires a genuine authorized source, such as a compatible utility API or smart-meter integration.
+
+If no such source is available:
+
+Continue supporting historical data.
+Clearly state that live electricity readings are unavailable.
+Do not display random values as live readings.
+
+If an external weather API is configured, display weather as contextual information, not electricity consumption.
+
+Show source, timestamp, unit, and freshness.
+
+Do not refresh external APIs more frequently than permitted.
+
+23. API AND ERROR HANDLING
+
+Implement only the APIs required by the actual features.
+
+At minimum:
+
+Authentication APIs.
+Analytics overview.
+Consumption trends.
+Area comparison.
+Dataset upload.
+Dataset validation.
+Dataset listing.
+Import history.
+Planning actions.
+Planning milestones.
+Reports.
+Administration health checks.
+
+Use consistent JSON response structures.
+
+Handle:
+
+Invalid input.
+Unauthorized access.
+Forbidden access.
+Missing resources.
+Database errors.
+Network errors.
+External API failures.
+
+Never conceal errors with fake responses.
+
+Do not allow one optional chart to crash the entire dashboard.
+
+24. PREMIUM FEATURE-PAGE THEMES
+
+Use role-specific color systems and feature-specific background assets.
+
+ENERGY ANALYST:
+
+Consumption Overview: forest and mint.
+Energy Trends: dark emerald and cyan.
+Area Comparison: teal and slate.
+High-Consumption Zones: forest with amber indicators.
+Analytical Reports: emerald and ivory.
+
+DATA CONTRIBUTOR:
+
+Dataset Upload: cyan and blue.
+Data Quality: slate and turquoise.
+Dataset Management: pale blue and teal.
+Data Correction: turquoise and white.
+Import History: dark teal and cyan.
+
+ENERGY PLANNER:
+
+Priority Assessment: amber and gold.
+Recommendations: orange and ivory.
+Action Planning: terracotta and forest.
+Implementation Timeline: coral and rose.
+Planning Reports: gold and plum.
+
+ADMINISTRATOR:
+
+User Management: midnight navy.
+Permissions: indigo.
+Configuration: graphite and violet.
+Audit Logs: charcoal and amber.
+System Health: navy and cyan.
+
+Use unique, relevant local background assets where appropriate.
+
+Use subtle image overlays and gradients.
+
+Keep forms and dense tables on clean, readable surfaces.
+
+Do not duplicate the same photograph across every feature page.
+
+If a unique photograph is unavailable, create a distinct gradient treatment using the role's palette.
+
+25. RESPONSIVE DESIGN
+
+The application must work on:
+
+Mobile.
+Tablet.
+Laptop.
+Desktop.
+
+Fix:
+
+Horizontal overflow.
+Misaligned forms.
+Clipped headings.
+Broken images.
+Oversized blank areas.
+Incorrect container widths.
+Sidebar overlap.
+Chart resizing.
+Mobile navigation.
+
+Use semantic HTML, accessible labels, keyboard navigation, focus indicators, and appropriate contrast.
+
+26. TESTING
+
+Test:
+
+Application startup.
+Database connectivity.
+Valid login for all four roles.
+Invalid login.
+Session restoration.
+Logout.
+Protected routes.
+Correct dashboard redirects.
+CSV validation.
+Database persistence.
+Analytics calculations.
+Area-name mapping.
+Map rendering.
+Planning actions.
+CSV exports.
+Responsive layout.
+Loading, empty, and error states.
+
+Run available build, lint, and test commands.
+
+Fix errors that can be reproduced.
+
+Do not claim a test passed unless it was actually executed.
+
+If an external API or database is unavailable, state which checks could not be completed.
+
+27. IMPLEMENTATION ORDER
+
+Build in this exact order.
+
+STAGE 1:
+Create the fresh project structure and working startup scripts.
+
+STAGE 2:
+Create the backend, PostgreSQL schema, migrations, and development seed.
+
+STAGE 3:
+Implement authentication and verify all four roles.
+
+STAGE 4:
+Create the landing page and four role-specific login experiences.
+
+STAGE 5:
+Create the four distinct dashboards and role-specific navigation.
+
+STAGE 6:
+Implement CSV upload, validation, and database persistence.
+
+STAGE 7:
+Implement consumption analytics and area comparison.
+
+STAGE 8:
+Implement the Leaflet map.
+
+STAGE 9:
+Implement high-consumption detection and recommendations.
+
+STAGE 10:
+Implement planning actions, milestones, and reports.
+
+STAGE 11:
+Apply the premium styling, images, responsive layout, and error states.
+
+STAGE 12:
+Run tests, fix errors, and document the final application.
+
+After each stage, report what was actually completed.
+
+Do not attempt to implement everything in one enormous component.
+
+28. TIME-CONSTRAINED DELIVERY
+
+My submission is tomorrow.
+
+Prioritize a small, complete, working product over excessive complexity.
+
+If time is limited, implement these essential workflows first:
+
+Landing page.
+Authentication for four roles.
+Four role-specific dashboards.
+PostgreSQL connectivity.
+CSV upload and validation.
+Actual database-backed analytics.
+Leaflet map.
+High-consumption detection.
+Planning actions.
+CSV report export.
+
+Defer nonessential integrations and advanced features.
+
+Do not create a button for a feature that does not work.
+
+Do not spend time implementing complex AI when transparent statistical calculations are sufficient.
+
+29. FINAL ACCEPTANCE CRITERIA
+
+The new project must:
+
+Be created independently from the previous implementation.
+Have its own source files and project structure.
+Start using documented commands.
+Display the landing page at the root route.
+Have four role-specific login experiences.
+Authenticate against the actual backend.
+Display four distinct dashboards.
+Enforce backend role authorization.
+Connect to PostgreSQL when configured.
+Upload and validate CSV datasets.
+Calculate analytics from stored records.
+Display a working Leaflet map.
+Use explainable high-consumption rules.
+Support planning actions and milestones.
+Export actual CSV reports.
+Use attractive, role-specific themes and imagery.
+Work responsively.
+Display useful errors instead of endless loading.
+Distinguish historical, demo, and genuine live data.
+Include setup and troubleshooting instructions.
+Report actual test results and remaining limitations.
+30. FINAL REPORT
+
+At the end, provide:
+
+New project structure.
+Technology stack.
+Implemented features.
+Four role definitions and dashboards.
+Database schema.
+Environment variables.
+Startup commands.
+Local URLs.
+Demo-account setup.
+Tests actually executed.
+Actual test results.
+Remaining limitations.
+Exact instructions for demonstrating the application.
+
+Start by creating the new project in a clean workspace.
+
+Do not import, copy, or reuse the previous solution.
+
+Build a simple, attractive, maintainable, functional application from scratch.
+
+3. How to use this in Google AI Studio
+
+Because Google AI Studio's capabilities depend on the mode and integrations available in your session, follow this workflow rather than assuming it can automatically run every service.
+
+Step 1: Start a new project
+
+Create a new, separate workspace for UrbanEnergy Insight.
+
+Do not open the previous source-code project as the starting point. Use the prompt above as the new specification.
+
+Step 2: Build in stages
+
+Do not ask the AI to generate the entire application in a single enormous response and assume it is finished.
+
+After pasting the master prompt, use these follow-up instructions one at a time:
+
+Follow-up 1 — Build the foundation
+
+Implement Stage 1 and Stage 2 of the master prompt. Create the new frontend and backend, configure the project scripts, establish the PostgreSQL schema and migrations, and provide the exact startup instructions. Do not import anything from my previous project. Run the checks available in the current environment and report actual results.
+
+Follow-up 2 — Complete authentication
+
+Implement the shared authentication system and all four role-specific login experiences. Create four distinct dashboards and navigation systems. Verify the role-based redirects and protected routes. Do not use mock authentication to simulate success.
+
+Follow-up 3 — Complete energy analytics
+
+Implement CSV upload, validation, PostgreSQL persistence, consumption calculations, area comparisons, high-consumption detection, and the Leaflet map. Use actual database records. Clearly label demonstration fixtures and handle empty datasets honestly.
+
+Follow-up 4 — Finish the design
+
+Apply the complete premium visual system, realistic images, individual role color palettes, feature-specific background assets or gradient treatments, responsive layouts, and polished loading, empty, and error states. Ensure every visible button and tab has a real function.
+
+Follow-up 5 — Final testing
+
+Run the available build, lint, database, API, and browser tests. Fix reproducible errors. Verify all four role-based workflows and the complete upload-to-analytics flow. Report only tests actually executed and list anything that remains incomplete.
+
+4. What you should demonstrate tomorrow
+
+The strongest demonstration is a single complete workflow:
+
+Open the premium landing page.
+Sign in as an Energy Analyst.
+View the analyst dashboard.
+Sign out and sign in as a Data Contributor.
+Upload a CSV file containing sample residential energy records.
+Validate and save the records to PostgreSQL.
+Return to the analyst dashboard.
+Show updated consumption analytics and area comparisons.
+Open the Leaflet map and explore the available geographic data.
+Show a high-consumption observation and explain the rule that flagged it.
+Sign in as an Energy Planner and create a planning action.
+Sign in as an Administrator and show system health and user management.
+Export an actual report.
+
+For the demonstration, use a small, clearly labelled dataset containing several urban areas, observation dates, consumption values, and consistent units. Make sure the dataset includes enough variation to demonstrate comparisons and the high-consumption rule.
+
+Do not claim the dataset represents real utility measurements unless it genuinely does.
+
+One important technical distinction
+
+The four logins can have four different visual identities and dashboards while sharing one authentication backend. That is the simpler, safer design.
+
+Similarly, you can build genuine database-backed analytics and an interactive real-world map without connecting to live electricity meters. Real-time electricity readings require a genuine data source; the website must not invent them.
+
+The goal is to finish with a small, attractive application that genuinely works—not twenty complicated screens that look complete but fail when someone clicks them.

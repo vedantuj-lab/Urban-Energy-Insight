@@ -1,0 +1,6 @@
+{
+  "name": "UrbanEnergy Insight",
+  "description": "Understand Your Energy. Find the Problem. Improve It. Urban residential energy analytics platform for analyzing consumption, identifying high-consumption areas, and planning efficiency improvements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

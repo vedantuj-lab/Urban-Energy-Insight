@@ -1,0 +1,1240 @@
+Bro ❤️, 4 logins are not compulsory! For your UrbanEnergy Insight project, I recommend reducing them to 3 roles. This will make the project easier to build, test, explain during your submission, and maintain without sacrificing the important features.
+
+The important thing is that every role must have its own dashboard and permissions, and all dashboards must use the same real, database-backed data.
+
+1. Should you use 2, 3, or 4 logins?
+Criteria	2 roles	3 roles ⭐	4 roles
+Development complexity	Lowest	Moderate	Highest
+Individual dashboards	2	3	4
+Feature organization	Some roles become overloaded	Good separation	More detailed separation
+Authentication testing	Easiest	Manageable	More work
+Suitable for tomorrow's submission	Excellent if time is very limited	Best balance	Riskier
+Recommended	Alternative	Yes	Not necessary
+
+Here, a role means a permission group. You can create multiple user accounts under each role without creating additional types of login systems.
+
+My recommendation: 3 roles
+Login 1: Energy Analyst
+
+Theme: Forest green, emerald, mint, and cyan.
+
+Background: Realistic city skyline with subtle energy-data visuals.
+
+Dashboard: Energy Intelligence Center.
+
+Features:
+
+Consumption overview.
+Energy trends.
+Urban area comparison.
+Interactive Leaflet map.
+High-consumption detection.
+Data-quality overview.
+Explainable analytics.
+Energy reports and CSV export.
+Login 2: Data Manager
+
+Theme: Turquoise, cyan, blue, and slate.
+
+Background: Modern urban data workspace.
+
+This role combines the previous Data Contributor responsibilities with authorized dataset-management functions.
+
+Dashboard: Energy Data Workspace.
+
+Features:
+
+Upload CSV files.
+Preview and map columns.
+Validate records.
+Identify missing values and duplicates.
+Correct permitted data fields.
+Manage datasets.
+Review import history.
+Monitor failed imports.
+View data freshness and processing status.
+Login 3: Energy Planner & Administrator
+
+Theme: Amber, coral, orange, midnight navy, and violet.
+
+Background: Professional urban-planning environment with city imagery and subtle administrative interface elements.
+
+Dashboard: Urban Planning & Control Center.
+
+Features:
+
+Priority-area assessment.
+Evidence-based recommendations.
+Create planning actions.
+Manage milestones and deadlines.
+Track implementation progress.
+Generate planning reports.
+Manage user accounts and roles.
+Review audit logs.
+Monitor backend and database health.
+
+Important: Combining planning and administration makes this role more complex. Implement explicit permissions within it. Only users with the administrator permission can manage accounts, roles, settings, and system controls. A planner must not gain administrator privileges simply because both use the same dashboard.
+
+This gives you three role types, three distinct login experiences, and three individual dashboards.
+
+2. What does “real-time data for every login” actually mean?
+
+This is an important part of your project.
+
+All three dashboards can display live updates from the same database. However, real-time updates do not automatically mean live electricity measurements.
+
+Your platform should distinguish between these sources:
+
+Data type	Source	Update behavior
+Energy consumption	Verified imported records or a genuine authorized energy API	Update after successful imports or when the real source provides new readings
+Analytics	Calculations using database records	Recalculate when relevant data changes
+Data quality	Actual validation and import results	Update after validation or import
+Geographic map	Stored coordinates and associated energy records	Refresh when the underlying records change
+Planning actions	PostgreSQL	Update after a successful create or edit
+User management	PostgreSQL	Update after authorized account changes
+System health	Backend and database health checks	Refresh periodically
+Weather, if included	A configured external weather API	Refresh according to the provider's update frequency
+
+For example, when a Data Manager uploads and successfully imports a dataset, the Energy Analyst should see the updated consumption totals, area comparisons, and map data without manually entering those figures.
+
+A planner should also see updated priorities when the underlying records change.
+
+You can achieve this with database-backed APIs and periodic refresh, or Server-Sent Events/WebSockets if genuinely needed. For your deadline, database-backed APIs with sensible refresh intervals are the simpler starting point.
+
+Do not claim live electricity data unless a genuine source supplies it. If your submission dataset is static, label it as historical or demonstration data.
+
+3. Complete master prompt for Google AI Studio
+
+Copy and paste the following prompt into a new Google AI Studio project.
+
+It instructs the AI to build the project from scratch, use three roles, keep the architecture manageable, and implement database-backed updates across the application.
+
+UrbanEnergy Insight — Three-Role Real-Time Platform Master Prompt
+URBANENERGY INSIGHT
+Greenfield Full-Stack Development Master Prompt
+1. YOUR ROLE
+
+Act as a senior full-stack developer, software architect, database engineer, premium UI/UX designer, and QA engineer.
+
+Build a completely NEW application named UrbanEnergy Insight from scratch.
+
+Do not repair, copy, import, or reuse any source code, folders, files, stylesheets, components, assets, database schemas, configuration, or authentication logic from my previous project.
+
+Create an independent implementation with a new project structure, new source files, new components, a new database schema, and new documentation.
+
+The application must be functional and suitable for an academic project submission.
+
+Prioritize essential working functionality over unnecessary complexity.
+
+Do not stop at a visual mockup. Implement the actual application workflows.
+
+If the current environment cannot provide a required service, explain the limitation and provide the correct integration code and setup instructions. Never claim an unverified service is working.
+
+2. PROJECT OBJECTIVE
+
+Project name:
+UrbanEnergy Insight
+
+Tagline:
+Understand Your Energy. Find the Problem. Improve It.
+
+Objective:
+Build a software-only urban residential energy analytics platform that allows users to upload and validate energy datasets, analyse consumption, compare urban areas, identify unusual consumption patterns, visualize geographic information, and create evidence-based planning actions.
+
+The platform does not require physical sensors, IoT devices, or hardware.
+
+Use conventional programming, SQL, and transparent statistical calculations.
+
+Do not make machine learning, LLMs, or complex AI models a requirement for the core MVP.
+
+3. START WITH A CLEAN PROJECT
+
+Create a completely new project workspace.
+
+Do not access or copy the previous implementation.
+
+Create a new project structure with:
+
+Frontend.
+Backend.
+Database migrations.
+Database seed scripts.
+API services.
+Shared UI components.
+Role-specific layouts.
+Role-specific dashboards.
+Tests.
+Environment-variable examples.
+README documentation.
+
+Keep the architecture small and maintainable.
+
+Do not create multiple implementations of the same feature.
+
+Do not create placeholder pages for features listed in this specification.
+
+4. TECHNOLOGY STACK
+
+Frontend:
+
+React.
+TypeScript.
+Vite.
+React Router.
+A consistent CSS design system.
+Lucide React icons.
+Recharts for charts.
+
+Backend:
+
+Node.js.
+Express.
+REST APIs.
+Input validation.
+Authentication middleware.
+Role-based authorization.
+
+Database:
+
+PostgreSQL.
+Parameterized queries.
+Migrations.
+Foreign keys.
+Appropriate indexes.
+Transactions for important multi-step writes.
+
+Maps:
+
+Leaflet.
+React Leaflet when appropriate.
+A genuine geographic tile provider.
+Correct map attribution.
+
+Testing:
+
+Vitest.
+Supertest.
+Playwright if available.
+
+Use compatible package versions and avoid unnecessary dependencies.
+
+If an existing project framework is not present because this is a greenfield build, create the application using this stack.
+
+Do not substitute localStorage for PostgreSQL as the authoritative database.
+
+If PostgreSQL cannot run in the current environment, implement the PostgreSQL integration and explain how to configure it. Do not pretend the database is connected.
+
+5. THREE ROLE TYPES ONLY
+
+Implement exactly THREE primary role types.
+
+Do not create a fourth primary role.
+
+Use one shared authentication system, one canonical authentication flow, and three separate role-specific dashboard experiences.
+
+The authenticated user's actual role must come from the trusted backend.
+
+A frontend role selector must never grant permissions.
+
+ROLE 1: ENERGY ANALYST
+
+Role identifier:
+energy_analyst
+
+Dashboard:
+Energy Intelligence Center
+
+Theme:
+Deep forest, emerald, mint, lime, and cyan.
+
+Login background:
+A realistic urban residential skyline with restrained energy-data visuals.
+
+Login heading:
+"See Beyond the Numbers."
+
+Description:
+"Analyse consumption, compare urban areas, and discover unusual energy patterns."
+
+Authorized features:
+
+Consumption Overview.
+Energy Trends.
+Urban Area Comparison.
+Interactive Energy Map.
+High-Consumption Detection.
+Data-Quality Overview.
+Explainable Analytics.
+Analytical Reports.
+CSV Report Export.
+
+The analyst can read authorized datasets and analytics.
+
+The analyst cannot manage users, assign roles, change system settings, or bypass data permissions.
+
+ROLE 2: DATA MANAGER
+
+Role identifier:
+data_manager
+
+Dashboard:
+Energy Data Workspace
+
+Theme:
+Cyan, turquoise, blue, pale slate, and white.
+
+Login background:
+A professional urban-data management environment.
+
+Login heading:
+"Make Every Record Count."
+
+Description:
+"Upload, validate, correct, and maintain energy datasets."
+
+Authorized features:
+
+Dataset Overview.
+CSV Upload.
+Column Mapping.
+Data Preview.
+Data Validation.
+Missing-Value Detection.
+Duplicate Detection.
+Supported Data Correction.
+Dataset Management.
+Import History.
+Processing Error Review.
+Data Freshness Status.
+
+The Data Manager can upload, validate, and correct authorized energy records.
+
+The Data Manager cannot manage users, change roles, or access administrator-only settings.
+
+ROLE 3: ENERGY PLANNER AND ADMINISTRATOR
+
+Role identifier:
+planner_admin
+
+Dashboard:
+Urban Planning & Control Center
+
+Theme:
+Amber, orange, coral, gold, midnight navy, and violet.
+
+Login background:
+A realistic city-planning environment with restrained administrative visuals.
+
+Login heading:
+"Turn Insight Into Action."
+
+Description:
+"Prioritize urban areas, track improvement plans, and manage platform operations when authorized."
+
+This role has two explicit permission levels within the same primary role type:
+
+A. Planner permissions:
+
+View priority assessments.
+View evidence-based recommendations.
+Create planning actions.
+Assign action priorities.
+Set deadlines.
+Create milestones.
+Track progress.
+Generate planning reports.
+
+B. Administrator permissions:
+
+Manage users.
+Assign or revoke roles.
+Manage supported permissions.
+Change authorized application settings.
+Review administrative audit logs.
+View backend health.
+View database health.
+Monitor failed imports and processing errors.
+
+A user with planner-only permissions must not gain administrator capabilities.
+
+A user with administrator permission may also access planner features.
+
+Enforce this distinction in the backend.
+
+Never grant administrator permissions simply because the user selected this role on the login screen.
+
+6. LOGIN EXPERIENCE
+
+Create three visually distinct login experiences using one shared authentication implementation.
+
+All login pages must have:
+
+Email field.
+Password field.
+Password visibility toggle.
+Sign In button.
+Input validation.
+Loading indicator.
+Accessible inline error messages.
+Responsive layout.
+A background image relevant to the role.
+A dark or light overlay that ensures text readability.
+A premium, polished form panel.
+
+Use different color gradients and visual identities for each role.
+
+The role-specific login experiences must be visually distinct but use the same backend authentication mechanism.
+
+After successful authentication:
+
+Retrieve the actual authenticated user.
+Resolve the trusted backend permissions.
+Redirect to the correct dashboard.
+Display the correct navigation.
+Prevent unauthorized route access.
+
+Do not show a successful-login message until the backend confirms authentication.
+
+Do not redirect to Sign In before session initialization completes.
+
+Handle invalid credentials, expired sessions, network failures, and backend errors correctly.
+
+7. DEVELOPMENT ACCOUNTS
+
+Create an idempotent development seed script.
+
+Create these accounts only if they do not already exist:
+
+Energy Analyst:
+analyst@demo.local
+
+Data Manager:
+datamanager@demo.local
+
+Planner and Administrator role:
+planneradmin@demo.local
+
+Development password:
+demo123
+
+For the third account, use an explicitly configured administrator permission for development demonstrations and document how planner-only permissions are assigned to other users.
+
+Requirements:
+
+Hash passwords securely.
+Do not create duplicate users.
+Do not overwrite existing user records.
+Do not expose demo credentials in production.
+Do not bypass the backend authentication system.
+Do not store real passwords in source code.
+
+Demo accounts are for development and demonstration only.
+
+8. PREMIUM DESIGN SYSTEM
+
+Create a professional, modern, aesthetic interface.
+
+Brand palette:
+
+Deep Forest: #063B2F.
+Emerald: #059669.
+Jade: #10B981.
+Turquoise: #14B8A6.
+Cyan: #06B6D4.
+Lime: #A3E635.
+Amber: #FBBF24.
+Orange: #F97316.
+Coral: #FB7185.
+Midnight Navy: #111827.
+Indigo: #4338CA.
+Violet: #8B5CF6.
+Cloud White: #F8FAFC.
+Slate: #64748B.
+Error Red: #DC2626.
+
+Use forest green and emerald as the primary brand identity.
+
+Give each role its own accent palette.
+
+Use:
+
+Refined typography.
+Consistent spacing.
+Clean charts.
+Rounded cards.
+Subtle shadows.
+Controlled gradients.
+Polished navigation.
+Clear loading and error states.
+Accessible color contrast.
+Responsive layouts.
+Consistent button sizes.
+
+Use Inter and Manrope where compatible.
+
+Avoid excessive animations, unnecessary visual effects, oversized empty spaces, and decorative cards without a functional purpose.
+
+9. LANDING PAGE
+
+The root route / must show the public landing page.
+
+It must work without requiring authentication.
+
+It must not depend on successful dashboard API requests.
+
+Create a premium landing page with realistic urban imagery.
+
+Navigation:
+
+Home.
+Features.
+How It Works.
+Research.
+User Roles.
+Sign In.
+Get Started.
+
+Hero headline:
+"Make Energy Simple."
+
+Supporting line:
+"See the city. Understand the energy. Plan a smarter future."
+
+Description:
+"UrbanEnergy Insight transforms urban residential energy records into understandable analytics, geographic insights, and practical planning actions."
+
+Include:
+
+A prominent realistic urban-building image.
+A dashboard preview.
+A small consumption chart.
+A geographic map preview.
+A high-consumption indicator.
+A data-quality indicator.
+Clear calls to action.
+
+Features section:
+
+Energy Analytics.
+Geographic Mapping.
+Data Upload.
+Data Validation.
+High-Consumption Detection.
+Area Comparison.
+Recommendations.
+Planning Actions.
+Reporting.
+
+How It Works:
+
+Upload records.
+Validate and store records.
+Analyse consumption.
+Compare areas and investigate unusual observations.
+Plan actions and report findings.
+
+Research section:
+Explain how the platform combines data ingestion, validation, analysis, interpretation, prioritization, and planning into an accessible workflow.
+
+Do not claim the research gap has been conclusively solved without an evaluation.
+
+User Roles section:
+Explain the three roles and their responsibilities.
+
+Footer:
+Include the brand, useful links, and project information.
+
+All navigation links and buttons must work.
+
+10. REALISTIC IMAGES
+
+Use realistic imagery for:
+
+The landing page.
+The three login pages.
+The main dashboard headers where appropriate.
+Feature-specific visual accents.
+
+The analyst login must have an urban-energy visual identity.
+
+The Data Manager login must have a data-workspace visual identity.
+
+The Planner/Admin login must have a planning and administration visual identity.
+
+Use distinct images for the three roles.
+
+Use local, generated, or appropriately licensed images.
+
+Avoid relying entirely on external image URLs.
+
+Provide attractive gradient fallbacks when an image cannot load.
+
+Use dark overlays when needed for readability.
+
+Do not place busy photographs behind dense tables, charts, or forms.
+
+11. THREE INDIVIDUAL DASHBOARDS
+
+Each role must have:
+
+A distinct dashboard.
+Role-specific navigation.
+A role-specific accent palette.
+Relevant metrics.
+Functional buttons.
+Relevant charts.
+Useful loading states.
+Honest empty states.
+Error messages with Retry where appropriate.
+Analyst dashboard
+
+Display:
+
+Total consumption for the selected period.
+Average consumption.
+Distinct area count.
+Consumption trends.
+Area comparison.
+Interactive map.
+High-consumption observations.
+Data-quality summary.
+Latest successful data refresh.
+
+All operational metrics must be calculated from actual database records.
+
+Data Manager dashboard
+
+Display:
+
+Total datasets.
+Latest successful import.
+Imported record count.
+Invalid record count.
+Duplicate record count.
+Recent import activity.
+Upload and validation shortcuts.
+Data freshness.
+Processing failures.
+
+All values must come from actual stored records and validation results.
+
+Planner/Admin dashboard
+
+Display planning information:
+
+Priority areas.
+Supporting observations.
+Active planning actions.
+Overdue actions.
+Upcoming milestones.
+Progress summaries.
+
+When the authenticated user has administrator permissions, also display:
+
+User management.
+Permission management.
+Audit logs.
+Backend health.
+Database health.
+Processing errors.
+
+Do not display administrator controls to planner-only users.
+
+12. POSTGRESQL DATABASE
+
+Use PostgreSQL as the authoritative database.
+
+Create a fresh schema for this new project.
+
+Use a minimal schema with tables such as:
+
+users.
+urban_areas.
+datasets.
+energy_records.
+validation_results.
+import_history.
+planning_actions.
+planning_milestones.
+audit_logs.
+application_settings.
+
+Create only the tables required by the implemented workflows.
+
+Use:
+
+Primary keys.
+Foreign keys.
+Unique constraints.
+Check constraints.
+Timestamps.
+Appropriate indexes.
+Parameterized SQL.
+Transactions for important writes.
+
+Create migration scripts and a development seed script.
+
+Provide a .env.example containing placeholders.
+
+Never commit secrets.
+
+Do not use localStorage as a substitute for database persistence.
+
+The frontend must not directly access PostgreSQL credentials.
+
+13. CSV UPLOAD AND VALIDATION
+
+Implement a complete upload workflow:
+
+Select a CSV file.
+Validate file type and size.
+Parse the file.
+Preview the records.
+Display column names.
+Allow column mapping.
+Validate required fields.
+Validate numeric consumption values.
+Validate dates and units.
+Identify missing values.
+Identify duplicates.
+Display row-level errors.
+Review supported corrections.
+Confirm the import.
+Persist valid approved records.
+Record import history.
+Refresh database-backed analytics.
+
+Possible fields:
+
+Area identifier.
+Observation date.
+Consumption value.
+Unit.
+Optional building category.
+Optional latitude and longitude.
+
+Do not assume every CSV includes every optional field.
+
+Do not invent coordinates.
+
+Do not silently discard invalid records.
+
+Do not show an import-success message before the database transaction succeeds.
+
+Provide a useful empty state before the first dataset is uploaded.
+
+14. LEAFLET MAP
+
+Implement a real, interactive Leaflet map.
+
+Features:
+
+Pan and zoom.
+Geographic markers.
+Area selection.
+Marker popups.
+Consumption details.
+High-consumption highlighting.
+Priority indicators.
+Filters.
+Legend.
+Loading state.
+Empty state.
+Error state.
+
+Use verified coordinates from stored records.
+
+Do not generate fake geographic coordinates.
+
+If a record has no coordinates, allow it to appear in non-geographic analytics but do not place it at an invented map location.
+
+Use a genuine tile provider with appropriate attribution.
+
+Clearly label demonstration locations.
+
+Respect the map provider's usage policy.
+
+15. ANALYTICS
+
+Implement transparent statistical calculations.
+
+Features:
+
+Total consumption.
+Average consumption.
+Median where useful.
+Minimum and maximum.
+Time-series trends.
+Area comparisons.
+Period-to-period changes.
+High-consumption observations.
+Data-quality summaries.
+
+Use consistent units.
+
+Do not mix Wh and kWh without conversion.
+
+Count distinct areas using area identifiers, not record counts.
+
+Ensure totals and averages use the same filters and reporting period shown in the interface.
+
+Explain how important metrics are calculated.
+
+Do not fabricate results when the database is empty.
+
+16. HIGH-CONSUMPTION DETECTION
+
+Use a simple, explainable statistical rule.
+
+Choose an appropriate approach such as:
+
+Comparing an area with the median of comparable areas.
+A configurable percentile threshold.
+A documented deviation-from-baseline rule.
+
+Display:
+
+Observed consumption.
+Comparison baseline.
+Threshold.
+Reporting period.
+Reason for flagging.
+
+A high-consumption observation does not automatically prove inefficiency, equipment failure, or a specific cause.
+
+Do not make unsupported causal claims.
+
+17. RECOMMENDATIONS AND PLANNING
+
+Generate evidence-based suggestions using actual records.
+
+Examples:
+
+Investigate unusually high consumption.
+Review missing records.
+Compare similar urban areas.
+Examine changes between periods.
+Consider a qualified energy-efficiency assessment.
+
+Allow authorized planners to:
+
+Create an action.
+Select an area.
+Add a description.
+Assign priority.
+Set a due date.
+Create milestones.
+Update progress.
+Mark work as completed.
+Generate a planning report.
+
+Suggested statuses:
+
+Proposed.
+Planned.
+In Progress.
+Completed.
+On Hold.
+
+Persist all changes in PostgreSQL.
+
+Do not guarantee energy savings or invent intervention results.
+
+18. REAL-TIME DATA AND SYNCHRONIZATION
+
+All three dashboards must read from the same authoritative PostgreSQL database.
+
+Implement shared database-backed APIs so that changes made by one role appear in other roles where permitted.
+
+Examples:
+
+When a Data Manager successfully imports new energy records:
+
+The database stores the records.
+The analytics APIs return updated results.
+The analyst dashboard refreshes.
+The map reflects the updated records with valid coordinates.
+The planner's priority assessment recalculates using the updated dataset.
+
+When a planner creates an action:
+
+The action is persisted.
+The planning dashboard displays it.
+Authorized administrators can review relevant operational information.
+
+When an administrator changes a user's permissions:
+
+The database is updated.
+Subsequent backend requests enforce the new permissions.
+The frontend refreshes the user's permitted navigation and controls.
+
+Implement a practical update strategy:
+
+Refresh relevant database-backed views after successful writes.
+Use periodic polling at sensible intervals when necessary.
+Consider Server-Sent Events or WebSockets only if justified.
+Avoid excessive database queries.
+Do not poll external APIs every second.
+
+Show:
+
+Last successful refresh.
+Data source.
+Observation timestamp.
+Data freshness.
+Stale-data warnings where applicable.
+
+Do not label data as live merely because the interface refreshes.
+
+Genuine live electricity readings
+
+Live electricity readings require a genuine authorized source, such as a compatible energy-provider API or smart-meter integration.
+
+If such a source is not configured:
+
+Show verified historical energy records.
+Allow regular dataset imports.
+Display a clear message that live electricity readings are unavailable.
+Never invent random consumption values.
+Never pretend a weather API provides electricity readings.
+
+If an external contextual source is implemented, document its update frequency, configuration, rate limits, and limitations.
+
+19. THREE ROLE-SPECIFIC NAVIGATION SYSTEMS
+
+Analyst navigation:
+
+Dashboard.
+Energy Trends.
+Area Comparison.
+Energy Map.
+High-Consumption Zones.
+Reports.
+
+Data Manager navigation:
+
+Dashboard.
+Upload Dataset.
+Data Quality.
+Dataset Management.
+Data Correction.
+Import History.
+
+Planner/Admin navigation:
+
+Dashboard.
+Priority Assessment.
+Recommendations.
+Action Planning.
+Timeline.
+Planning Reports.
+
+Only users with administrator permissions should additionally see:
+
+User Management.
+Permissions.
+System Settings.
+Audit Logs.
+System Health.
+
+The active navigation item must reflect the actual route.
+
+Support browser back and forward navigation.
+
+Prevent direct URL access to unauthorized features.
+
+Enforce permissions on the backend.
+
+20. ERROR HANDLING
+
+Handle:
+
+Invalid login.
+Expired sessions.
+Database disconnection.
+Missing configuration.
+Invalid CSV files.
+Failed imports.
+Empty datasets.
+API errors.
+Missing coordinates.
+Unauthorized access.
+Forbidden access.
+Failed report generation.
+External source failures.
+
+Do not leave loading indicators running indefinitely.
+
+Every asynchronous request must handle success, empty results, and failure.
+
+Provide useful retry options where appropriate.
+
+A dashboard API failure must not automatically log out a user whose authentication remains valid.
+
+Do not hide errors with CSS or fake success messages.
+
+21. REPORTS AND EXPORTS
+
+Implement genuine downloadable CSV reports.
+
+Analyst report:
+
+Reporting period.
+Source dataset.
+Total consumption.
+Average consumption.
+Area comparisons.
+High-consumption observations.
+Data-quality limitations.
+
+Planner report:
+
+Priority areas.
+Supporting evidence.
+Recommendations.
+Planning actions.
+Milestones.
+Progress.
+
+Generate files from actual stored data.
+
+Do not show a successful export notification unless the file is created.
+
+PDF export is optional and should only be added if it can be implemented and tested reliably.
+
+22. SECURITY
+
+Implement:
+
+Secure password hashing.
+Backend authentication.
+Backend role-based authorization.
+Least-privilege permissions.
+Input validation.
+Parameterized SQL.
+Appropriate session handling.
+Secure environment variables.
+Correct CORS configuration.
+Audit records for sensitive administrative changes.
+
+Never trust frontend role state.
+
+Never expose passwords, password hashes, database credentials, or API secrets.
+
+Never allow planner-only users to perform administrator-only operations.
+
+23. RESPONSIVE DESIGN
+
+The website must work on:
+
+Mobile phones.
+Tablets.
+Laptops.
+Desktop screens.
+
+Fix:
+
+Misaligned forms.
+Overflowing cards.
+Clipped headings.
+Broken images.
+Incorrect chart sizes.
+Sidebar overlap.
+Horizontal scrolling.
+Inconsistent spacing.
+Mobile navigation.
+
+Use accessible labels, keyboard navigation, visible focus indicators, and adequate contrast.
+
+24. TESTING
+
+Test the complete three-role workflow.
+
+Authentication:
+
+Valid analyst login.
+Valid Data Manager login.
+Valid planner login.
+Invalid credentials.
+Session restoration.
+Logout.
+Direct navigation.
+Permission enforcement.
+
+Data:
+
+CSV upload.
+Validation.
+Database persistence.
+Import history.
+Analytics calculations.
+Map rendering.
+Missing coordinates.
+Empty datasets.
+
+Planning:
+
+Create an action.
+Edit an action.
+Add milestones.
+Update progress.
+Generate a report.
+
+Administration:
+
+View users.
+Update permitted roles.
+Verify planner-only restrictions.
+Check audit records.
+Verify backend and database health checks.
+
+Real-time behavior:
+
+Import records as Data Manager.
+Verify the analyst's updated analytics.
+Verify the map reflects valid updated geographic records.
+Verify priority calculations update.
+Create a planning action and verify it persists after refresh.
+
+Run the available build, lint, and test commands.
+
+Do not claim any test passed unless it was executed.
+
+Document any checks that could not be completed.
+
+25. IMPLEMENTATION ORDER
+
+Follow this order:
+
+Stage 1:
+Create the new project and startup configuration.
+
+Stage 2:
+Implement the PostgreSQL schema, migrations, and seed script.
+
+Stage 3:
+Implement shared authentication and the three role types.
+
+Stage 4:
+Build the landing page and three distinct login experiences.
+
+Stage 5:
+Build the three dashboards and permission-aware navigation.
+
+Stage 6:
+Implement CSV upload, validation, and database persistence.
+
+Stage 7:
+Implement analytics and high-consumption detection.
+
+Stage 8:
+Implement the Leaflet map.
+
+Stage 9:
+Implement recommendations, planning actions, and milestones.
+
+Stage 10:
+Implement database-backed synchronization across dashboards.
+
+Stage 11:
+Implement reports, responsive design, and premium imagery.
+
+Stage 12:
+Run tests, fix reproducible errors, and complete documentation.
+
+Build incrementally.
+
+Do not place the entire application in one component.
+
+Do not generate unfinished placeholder features merely to claim the feature list is complete.
+
+26. TIME LIMIT
+
+My academic submission is tomorrow.
+
+Prioritize the smallest complete, working application.
+
+The most important deliverables are:
+
+A polished landing page.
+Three working role-specific login experiences.
+Three individual dashboards.
+Secure backend authentication.
+PostgreSQL persistence.
+CSV upload and validation.
+Database-backed analytics.
+A real Leaflet map.
+High-consumption detection.
+Planning actions.
+Real CSV exports.
+Cross-dashboard data refresh.
+Accurate setup documentation.
+
+Defer optional integrations and complex features.
+
+Make sure every visible button and tab has a working purpose.
+
+27. FINAL ACCEPTANCE CRITERIA
+
+The project must:
+
+Be created independently from the previous solution.
+Have its own files and folder structure.
+Start with documented commands.
+Display the public landing page at /.
+Have three role-specific login experiences.
+Use one secure authentication system.
+Display three individual dashboards.
+Enforce actual backend permissions.
+Connect to PostgreSQL when configured.
+Persist uploaded records.
+Calculate analytics from stored data.
+Display a working Leaflet map.
+Identify high-consumption observations using transparent rules.
+Support planning actions and milestones.
+Export real CSV reports.
+Refresh relevant dashboard data after successful writes.
+Use attractive, role-specific imagery and color palettes.
+Handle loading, empty, and error states.
+Distinguish historical data from genuine live readings.
+Include setup instructions and test results.
+28. FINAL DELIVERY REPORT
+
+Provide:
+
+New project structure.
+Technology stack.
+Three role definitions.
+Dashboard and feature descriptions.
+PostgreSQL schema.
+Environment configuration.
+Database setup instructions.
+Startup commands.
+Local URLs.
+Development-account setup.
+Tests actually executed.
+Actual test results.
+External API configuration, if applicable.
+Remaining limitations.
+A step-by-step academic demonstration script.
+
+Start creating the new project now.
+
+Do not import or reuse anything from the previous solution.
+
+Build a simple, premium, functional, independently implemented UrbanEnergy Insight platform.
+
+4. My advice for your submission
+
+Bro, use three roles, but don't spend equal time on everything.
+
+Prioritize these four things:
+
+The website runs reliably.
+All three roles log in and open the correct dashboards.
+Uploading a dataset changes the analytics using actual database records.
+The map, recommendations, and planning workflow demonstrate the purpose of the project.
+
+The real-time requirement should be demonstrated by importing a dataset and seeing its effects in the relevant dashboards—not by displaying invented numbers that change every second.
+
+One final technical point: a working PostgreSQL backend requires a configured database, and genuine live electricity readings require an actual authorized energy-data source. Google AI Studio can help generate the code, but you must verify those services are configured and running in your deployment environment.

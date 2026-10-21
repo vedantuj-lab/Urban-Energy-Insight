@@ -1,0 +1,1208 @@
+{
+  "users": [
+    {
+      "id": "usr_analyst_01",
+      "email": "analyst@demo.local",
+      "password_hash": "$2b$10$0uD7Fi86MKllLkL2tpIxM..04tNagn1F2GZBp48LOZOqwHKBUazW.",
+      "full_name": "Elena Rostova",
+      "role": "energy_analyst",
+      "permissions": [
+        "analyst"
+      ],
+      "organization": "Urban Sustainability Research Lab",
+      "created_at": "2026-01-10T08:00:00Z",
+      "updated_at": "2026-01-10T08:00:00Z"
+    },
+    {
+      "id": "usr_manager_01",
+      "email": "datamanager@demo.local",
+      "password_hash": "$2b$10$0uD7Fi86MKllLkL2tpIxM..04tNagn1F2GZBp48LOZOqwHKBUazW.",
+      "full_name": "Marcus Vance",
+      "role": "data_manager",
+      "permissions": [
+        "data_manager"
+      ],
+      "organization": "Metropolitan Grid & Utilities Bureau",
+      "created_at": "2026-01-12T09:30:00Z",
+      "updated_at": "2026-01-12T09:30:00Z"
+    },
+    {
+      "id": "usr_planner_admin_01",
+      "email": "planneradmin@demo.local",
+      "password_hash": "$2b$10$0uD7Fi86MKllLkL2tpIxM..04tNagn1F2GZBp48LOZOqwHKBUazW.",
+      "full_name": "Devin Thorne",
+      "role": "planner_admin",
+      "permissions": [
+        "planner",
+        "admin"
+      ],
+      "organization": "City Climate Action & Infrastructure Command",
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "usr_planner_only_02",
+      "email": "planner@demo.local",
+      "password_hash": "$2b$10$0uD7Fi86MKllLkL2tpIxM..04tNagn1F2GZBp48LOZOqwHKBUazW.",
+      "full_name": "Dr. Soraya Morales",
+      "role": "planner_admin",
+      "permissions": [
+        "planner"
+      ],
+      "organization": "Urban Planning Department",
+      "created_at": "2026-01-15T11:00:00Z",
+      "updated_at": "2026-01-15T11:00:00Z"
+    }
+  ],
+  "urban_areas": [
+    {
+      "id": "area_usa_nw",
+      "name": "Northwood Residential Sector",
+      "code": "USA-NWD",
+      "country": "United States",
+      "state_province": "California",
+      "district": "San Francisco County",
+      "city": "San Francisco",
+      "category": "High-rise Multi-family",
+      "climate_zone": "Mediterranean Coastal (3C)",
+      "latitude": 37.7833,
+      "longitude": -122.4167,
+      "household_count": 1420,
+      "gross_floor_area_sqm": 112000,
+      "target_intensity_kwh_sqm": 42,
+      "created_at": "2026-01-10T08:00:00Z"
+    },
+    {
+      "id": "area_usa_rv",
+      "name": "Riverdale Eco-District",
+      "code": "USA-RVD",
+      "country": "United States",
+      "state_province": "California",
+      "district": "San Francisco County",
+      "city": "San Francisco",
+      "category": "Mid-rise Sustainable Housing",
+      "climate_zone": "Mediterranean Coastal (3C)",
+      "latitude": 37.7691,
+      "longitude": -122.4462,
+      "household_count": 860,
+      "gross_floor_area_sqm": 78500,
+      "target_intensity_kwh_sqm": 35,
+      "created_at": "2026-01-10T08:00:00Z"
+    },
+    {
+      "id": "area_usa_dwt",
+      "name": "Downtown Central Towers",
+      "code": "USA-DWT",
+      "country": "United States",
+      "state_province": "New York",
+      "district": "New York County",
+      "city": "Manhattan",
+      "category": "High-rise Multi-family",
+      "climate_zone": "Humid Continental (4A)",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "household_count": 2150,
+      "gross_floor_area_sqm": 195000,
+      "target_intensity_kwh_sqm": 46.5,
+      "created_at": "2026-01-10T08:00:00Z"
+    },
+    {
+      "id": "area_ind_bkr",
+      "name": "Bandra-Kurla Residential Enclave",
+      "code": "IND-BKR",
+      "country": "India",
+      "state_province": "Maharashtra",
+      "district": "Mumbai Suburban",
+      "city": "Mumbai",
+      "category": "High-rise Multi-family",
+      "climate_zone": "Tropical Wet & Dry (Aw)",
+      "latitude": 19.0657,
+      "longitude": 72.8687,
+      "household_count": 1800,
+      "gross_floor_area_sqm": 145000,
+      "target_intensity_kwh_sqm": 52,
+      "created_at": "2026-01-10T08:00:00Z"
+    },
+    {
+      "id": "area_ind_hkh",
+      "name": "Hauz Khas Residential Colony",
+      "code": "IND-HKH",
+      "country": "India",
+      "state_province": "Delhi (NCT)",
+      "district": "South Delhi",
+      "city": "New Delhi",
+      "category": "Mixed-use Residential",
+      "climate_zone": "Subtropical Semi-Arid (BSh)",
+      "latitude": 28.5494,
+      "longitude": 77.2001,
+      "household_count": 1100,
+      "gross_floor_area_sqm": 92000,
+      "target_intensity_kwh_sqm": 48,
+      "created_at": "2026-01-10T08:00:00Z"
+    },
+    {
+      "id": "area_gbr_gwp",
+      "name": "Greenwich Millennium Village",
+      "code": "GBR-GWP",
+      "country": "United Kingdom",
+      "state_province": "Greater London",
+      "district": "Greenwich",
+      "city": "London",
+      "category": "Sustainable Mid-rise Housing",
+      "climate_zone": "Temperate Maritime (Cfb)",
+      "latitude": 51.49,
+      "longitude": 0.009,
+      "household_count": 950,
+      "gross_floor_area_sqm": 84000,
+      "target_intensity_kwh_sqm": 38,
+      "created_at": "2026-01-10T08:00:00Z"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "ds_q1q3_2026",
+      "name": "Multi-Region Residential Energy Benchmark 2026 (Verified)",
+      "filename": "international_residential_benchmark_2026.csv",
+      "uploaded_by": "usr_manager_01",
+      "total_records": 60,
+      "valid_records": 60,
+      "invalid_records": 0,
+      "status": "completed",
+      "reporting_period_start": "2026-01-01",
+      "reporting_period_end": "2026-10-01",
+      "created_at": "2026-10-15T14:20:00Z"
+    }
+  ],
+  "energy_records": [
+    {
+      "id": "rec_1",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-01-15",
+      "consumption_value": 6633,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (6633 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Winter auxiliary electrical heating",
+        "High glazed facade ratio without low-e film",
+        "Pre-1995 construction envelope"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_2",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-02-15",
+      "consumption_value": 6917,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (6917 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Winter auxiliary electrical heating",
+        "High glazed facade ratio without low-e film",
+        "Pre-1995 construction envelope"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_3",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-03-15",
+      "consumption_value": 5327,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_4",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-04-15",
+      "consumption_value": 5411,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_5",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-05-15",
+      "consumption_value": 5401,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_6",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-06-15",
+      "consumption_value": 5310,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_7",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-07-15",
+      "consumption_value": 6930,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (6930 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Winter auxiliary electrical heating",
+        "High glazed facade ratio without low-e film",
+        "Pre-1995 construction envelope"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_8",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-08-15",
+      "consumption_value": 6746,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (6746 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Winter auxiliary electrical heating",
+        "High glazed facade ratio without low-e film",
+        "Pre-1995 construction envelope"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_9",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-09-15",
+      "consumption_value": 4943,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_10",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_nw",
+      "area_code": "USA-NWD",
+      "observation_date": "2026-10-15",
+      "consumption_value": 4933,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_11",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-01-15",
+      "consumption_value": 2850,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_12",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-02-15",
+      "consumption_value": 3062,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_13",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-03-15",
+      "consumption_value": 3227,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_14",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-04-15",
+      "consumption_value": 3311,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_15",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-05-15",
+      "consumption_value": 3301,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_16",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-06-15",
+      "consumption_value": 3210,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_17",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-07-15",
+      "consumption_value": 2862,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_18",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-08-15",
+      "consumption_value": 2724,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_19",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-09-15",
+      "consumption_value": 2633,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_20",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_rv",
+      "area_code": "USA-RVD",
+      "observation_date": "2026-10-15",
+      "consumption_value": 2623,
+      "consumption_unit": "kWh",
+      "building_category": "Mid-rise Sustainable Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_21",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-01-15",
+      "consumption_value": 6980,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_22",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-02-15",
+      "consumption_value": 9637,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (9637 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Continuous hallway ventilation load",
+        "High tenant occupancy density",
+        "Summer air conditioning cooling load"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_23",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-03-15",
+      "consumption_value": 9858,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (9858 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Continuous hallway ventilation load",
+        "High tenant occupancy density",
+        "Summer air conditioning cooling load"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_24",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-04-15",
+      "consumption_value": 7441,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_25",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-05-15",
+      "consumption_value": 7431,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_26",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-06-15",
+      "consumption_value": 7340,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_27",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-07-15",
+      "consumption_value": 7202,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_28",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-08-15",
+      "consumption_value": 9466,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (9466 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Continuous hallway ventilation load",
+        "High tenant occupancy density",
+        "Summer air conditioning cooling load"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_29",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-09-15",
+      "consumption_value": 6973,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_30",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_usa_dwt",
+      "area_code": "USA-DWT",
+      "observation_date": "2026-10-15",
+      "consumption_value": 6963,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_31",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-01-15",
+      "consumption_value": 5800,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_32",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-02-15",
+      "consumption_value": 6012,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_33",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-03-15",
+      "consumption_value": 6177,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_34",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-04-15",
+      "consumption_value": 6261,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_35",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-05-15",
+      "consumption_value": 8376,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (8376 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Monsoon dehumidification air conditioning",
+        "Tropical ambient temperature >34°C",
+        "High lift and pumping load"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_36",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-06-15",
+      "consumption_value": 8254,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (8254 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Monsoon dehumidification air conditioning",
+        "Tropical ambient temperature >34°C",
+        "High lift and pumping load"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_37",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-07-15",
+      "consumption_value": 8069,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (8069 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Monsoon dehumidification air conditioning",
+        "Tropical ambient temperature >34°C",
+        "High lift and pumping load"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_38",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-08-15",
+      "consumption_value": 5884,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_39",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-09-15",
+      "consumption_value": 5793,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_40",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_bkr",
+      "area_code": "IND-BKR",
+      "observation_date": "2026-10-15",
+      "consumption_value": 5783,
+      "consumption_unit": "kWh",
+      "building_category": "High-rise Multi-family",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_41",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-01-15",
+      "consumption_value": 4300,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_42",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-02-15",
+      "consumption_value": 4512,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_43",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-03-15",
+      "consumption_value": 4677,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_44",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-04-15",
+      "consumption_value": 4761,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_45",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-05-15",
+      "consumption_value": 6366,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (6366 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Extreme seasonal temperature variation (45°C summer vs 6°C winter)",
+        "Multiple split A/C units"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_46",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-06-15",
+      "consumption_value": 6244,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (6244 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "Extreme seasonal temperature variation (45°C summer vs 6°C winter)",
+        "Multiple split A/C units"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_47",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-07-15",
+      "consumption_value": 4522,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_48",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-08-15",
+      "consumption_value": 4384,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_49",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-09-15",
+      "consumption_value": 4293,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_50",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_ind_hkh",
+      "area_code": "IND-HKH",
+      "observation_date": "2026-10-15",
+      "consumption_value": 4283,
+      "consumption_unit": "kWh",
+      "building_category": "Mixed-use Residential",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_51",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-01-15",
+      "consumption_value": 4288,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (4288 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "District heating integration",
+        "Well-insulated cavity walls with double glazing"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_52",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-02-15",
+      "consumption_value": 4572,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": true,
+      "flag_reason": "Recorded consumption (4572 kWh) exceeds comparable category baseline median (4,100 kWh) by >30%. Statistical trigger: Multi-family baseline deviation.",
+      "possible_contributing_factors": [
+        "District heating integration",
+        "Well-insulated cavity walls with double glazing"
+      ],
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_53",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-03-15",
+      "consumption_value": 3577,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_54",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-04-15",
+      "consumption_value": 3661,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_55",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-05-15",
+      "consumption_value": 3651,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_56",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-06-15",
+      "consumption_value": 3560,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_57",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-07-15",
+      "consumption_value": 3422,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_58",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-08-15",
+      "consumption_value": 3284,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_59",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-09-15",
+      "consumption_value": 3193,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    },
+    {
+      "id": "rec_60",
+      "dataset_id": "ds_q1q3_2026",
+      "area_id": "area_gbr_gwp",
+      "area_code": "GBR-GWP",
+      "observation_date": "2026-10-15",
+      "consumption_value": 2883,
+      "consumption_unit": "kWh",
+      "building_category": "Sustainable Mid-rise Housing",
+      "is_flagged_high": false,
+      "created_at": "2026-10-15T14:25:00Z"
+    }
+  ],
+  "planning_actions": [
+    {
+      "id": "act_01",
+      "area_id": "area_usa_nw",
+      "created_by": "usr_planner_admin_01",
+      "title": "HVAC Sub-metering & Thermal Envelope Audit in Northwood Sector",
+      "description": "Deploy thermal imaging audit and sub-metering diagnostic to isolate the 34% winter load deviation observed across Northwood Sector multi-family towers.",
+      "priority": "High",
+      "status": "In Progress",
+      "target_date": "2026-11-30",
+      "progress": 65,
+      "estimated_reduction_kwh": 45000,
+      "created_at": "2026-09-01T10:00:00Z",
+      "updated_at": "2026-10-18T16:00:00Z"
+    },
+    {
+      "id": "act_02",
+      "area_id": "area_usa_dwt",
+      "created_by": "usr_planner_admin_01",
+      "title": "Downtown Towers Variable Refrigerant Flow (VRF) Retrofit",
+      "description": "Coordinate with property managers to upgrade legacy heat pumps and implement centralized nighttime setback controls.",
+      "priority": "Critical",
+      "status": "Planned",
+      "target_date": "2026-12-15",
+      "progress": 25,
+      "estimated_reduction_kwh": 82000,
+      "created_at": "2026-09-15T11:30:00Z",
+      "updated_at": "2026-10-12T09:15:00Z"
+    },
+    {
+      "id": "act_03",
+      "area_id": "area_ind_bkr",
+      "created_by": "usr_planner_admin_01",
+      "title": "Bandra-Kurla Common-Area Chiller Plant VFD Upgrade",
+      "description": "Install variable frequency drives on condenser water pumps and optimize chiller staging during high humidity monsoon peak.",
+      "priority": "High",
+      "status": "In Progress",
+      "target_date": "2027-01-31",
+      "progress": 40,
+      "estimated_reduction_kwh": 68000,
+      "created_at": "2026-10-01T14:00:00Z",
+      "updated_at": "2026-10-15T14:00:00Z"
+    },
+    {
+      "id": "act_04",
+      "area_id": "area_usa_rv",
+      "created_by": "usr_planner_admin_01",
+      "title": "Riverdale Rooftop Community Solar Integration Feasibility",
+      "description": "Evaluate microgrid load sharing and storage buffers across 12 mid-rise buildings in the Riverdale district.",
+      "priority": "Medium",
+      "status": "Proposed",
+      "target_date": "2027-02-28",
+      "progress": 10,
+      "estimated_reduction_kwh": 28000,
+      "created_at": "2026-10-01T14:00:00Z",
+      "updated_at": "2026-10-01T14:00:00Z"
+    }
+  ],
+  "planning_milestones": [
+    {
+      "id": "ms_01",
+      "action_id": "act_01",
+      "title": "Complete building thermographic survey",
+      "due_date": "2026-09-20",
+      "is_completed": true,
+      "completed_at": "2026-09-18T17:00:00Z",
+      "created_at": "2026-09-01T10:00:00Z"
+    },
+    {
+      "id": "ms_02",
+      "action_id": "act_01",
+      "title": "Analyze common-area vs tenant sub-meter load balance",
+      "due_date": "2026-10-25",
+      "is_completed": true,
+      "completed_at": "2026-10-20T14:30:00Z",
+      "created_at": "2026-09-01T10:00:00Z"
+    },
+    {
+      "id": "ms_03",
+      "action_id": "act_01",
+      "title": "Publish draft remediation proposal to building board",
+      "due_date": "2026-11-15",
+      "is_completed": false,
+      "created_at": "2026-09-01T10:00:00Z"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scen_01",
+      "area_id": "area_usa_nw",
+      "area_name": "Northwood Residential Sector",
+      "baseline_period": "2026-01 to 2026-10",
+      "baseline_kwh": 64500,
+      "reduction_percent": 8,
+      "projected_kwh": 59340,
+      "saved_kwh": 5160,
+      "estimated_cost_savings_usd": 877,
+      "co2_kg_avoided": 1960,
+      "notes": "Hypothetical 8% reduction via night setbacks and air leakage sealing.",
+      "created_at": "2026-10-18T14:00:00Z"
+    },
+    {
+      "id": "scen_02",
+      "area_id": "area_ind_bkr",
+      "area_name": "Bandra-Kurla Residential Enclave",
+      "baseline_period": "2026-05 to 2026-08",
+      "baseline_kwh": 72000,
+      "reduction_percent": 12,
+      "projected_kwh": 63360,
+      "saved_kwh": 8640,
+      "estimated_cost_savings_usd": 1296,
+      "co2_kg_avoided": 6048,
+      "notes": "VFD optimization on chiller condenser loops during high-humidity season.",
+      "created_at": "2026-10-19T11:30:00Z"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "out_01",
+      "action_id": "act_04",
+      "action_title": "Oakridge Smart Thermostat Residential Subsidy Program",
+      "area_id": "area_usa_rv",
+      "area_name": "Riverdale Eco-District",
+      "pre_intervention_period": "2025-06 to 2025-08",
+      "pre_intervention_kwh": 32400,
+      "post_intervention_period": "2026-06 to 2026-08",
+      "post_intervention_kwh": 29808,
+      "observed_reduction_kwh": 2592,
+      "observed_reduction_percent": 8,
+      "verification_status": "Verified",
+      "weather_normalized": true,
+      "notes": "Weather-normalized comparison shows 8.0% cooling load drop after smart thermostat deployment."
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "aud_1792596845621_5kff",
+      "action": "USER_LOGIN",
+      "resource": "Auth",
+      "details": {
+        "email": "planneradmin@demo.local",
+        "role": "planner_admin",
+        "permissions": [
+          "planner",
+          "admin"
+        ]
+      },
+      "ip_address": "127.0.0.1",
+      "timestamp": "2026-10-21T15:34:05.621Z"
+    },
+    {
+      "id": "aud_1792596837314_kr8b",
+      "action": "USER_LOGIN",
+      "resource": "Auth",
+      "details": {
+        "email": "datamanager@demo.local",
+        "role": "data_manager",
+        "permissions": [
+          "data_manager"
+        ]
+      },
+      "ip_address": "127.0.0.1",
+      "timestamp": "2026-10-21T15:33:57.314Z"
+    },
+    {
+      "id": "aud_1792596831730_tqwz",
+      "action": "USER_LOGIN",
+      "resource": "Auth",
+      "details": {
+        "email": "analyst@demo.local",
+        "role": "energy_analyst",
+        "permissions": [
+          "analyst"
+        ]
+      },
+      "ip_address": "127.0.0.1",
+      "timestamp": "2026-10-21T15:33:51.730Z"
+    },
+    {
+      "id": "aud_01",
+      "user_id": "usr_planner_admin_01",
+      "user_email": "planneradmin@demo.local",
+      "role": "planner_admin",
+      "action": "SYSTEM_BOOTSTRAP",
+      "resource": "Database",
+      "details": {
+        "version": "2.0.0",
+        "initializedTables": 11,
+        "countries": [
+          "USA",
+          "India",
+          "UK"
+        ]
+      },
+      "ip_address": "127.0.0.1",
+      "timestamp": "2026-10-15T14:00:00Z"
+    },
+    {
+      "id": "aud_02",
+      "user_id": "usr_manager_01",
+      "user_email": "datamanager@demo.local",
+      "role": "data_manager",
+      "action": "DATASET_UPLOAD",
+      "resource": "Datasets",
+      "details": {
+        "datasetId": "ds_q1q3_2026",
+        "records": 60
+      },
+      "ip_address": "192.168.1.104",
+      "timestamp": "2026-10-15T14:25:00Z"
+    }
+  ],
+  "import_history": [
+    {
+      "id": "imp_01",
+      "dataset_id": "ds_q1q3_2026",
+      "user_id": "usr_manager_01",
+      "file_name": "international_residential_benchmark_2026.csv",
+      "records_imported": 60,
+      "records_rejected": 0,
+      "processing_duration_ms": 142,
+      "imported_at": "2026-10-15T14:25:00Z"
+    }
+  ],
+  "last_data_ingestion": "2026-10-15T14:25:00Z",
+  "settings": {
+    "defaultEnergyUnit": "kWh",
+    "highThresholdMultiplier": 1.25,
+    "systemName": "UrbanEnergy Insight"
+  }
+}

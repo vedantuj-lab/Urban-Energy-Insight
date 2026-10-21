@@ -1,0 +1,1199 @@
+Yes — after reviewing your UrbanEnergy Insight literature-review presentation and checking the main research paper, I recommend modifying the proposed solution before you generate the final application.
+
+Your current solution has a good foundation: data upload, energy analytics, geographic visualization, high-consumption detection, and improvement planning. However, it does not yet address every research gap identified in your literature review.
+
+The biggest improvement is to make UrbanEnergy Insight geographically adaptable, fair when comparing different locations, explainable, and capable of turning analytical findings into measurable improvement plans.
+
+I'll explain what needs to change, compare the existing research with your proposed system, and then give you a master prompt to use in Google AI Studio.
+
+1. What does the research paper actually do?
+
+Your selected research paper is:
+
+Machine learning-based analysis of urban regeneration and household energy consumption for sustainable energy optimization in deteriorated urban areas
+
+The paper was published in City and Built Environment on 11 September 2026.
+
+You can read the original paper here: Read the research paper on Springer Nature.
+
+The study examines residential resource consumption in District 10 of Tehran, Iran. It considers electricity, water and gas consumption alongside 35 variables covering economic, social-cultural, physical and environmental dimensions. It evaluates Random Forest, Multi-Layer Perceptron and two Gaussian Process variants, with GIS used for spatial analysis.
+
+Advantages of the existing research
+Combines multiple factors: It examines energy and other resource consumption in relation to building, household, economic, social and environmental characteristics.
+Uses machine learning: It compares several modelling approaches rather than relying exclusively on basic descriptive statistics.
+Includes spatial analysis: GIS supports examination of geographic patterns.
+Supports urban regeneration decisions: Its findings can help researchers and planners understand relationships between urban conditions and resource consumption.
+Uses quantitative evaluation: The study reports model-performance metrics rather than relying only on visual observations.
+Disadvantages and limitations
+Geographic scope: The research focuses on one district of Tehran. Its findings should not automatically be generalized to other countries or climates.
+Data requirements: Its modelling approach depends on having relevant residential, resource and contextual variables.
+Uneven predictive performance: The reported results vary by resource type. The authors report particularly strong electricity-model results on normalized data, while water and gas results show more limited predictive performance.
+Implementation complexity: GIS, preprocessing and multiple machine-learning models may be difficult to reproduce in a small software project.
+Practical implementation: A research model is not, by itself, a complete application for managing datasets, reviewing explanations, assigning priorities and tracking improvement actions.
+
+These limitations do not mean that the research is unsuccessful. They identify areas where a separate application could add practical value.
+
+2. What is the research gap?
+
+Based on your literature-review presentation and the paper, the main opportunity for UrbanEnergy Insight is to connect analytical results with a practical, user-facing workflow.
+
+Your proposed workflow should be:
+
+Import data → Validate data → Analyse consumption → Compare similar areas → Detect unusual patterns → Explain findings → Recommend actions → Simulate scenarios → Track outcomes.
+
+The most important potential contributions are:
+
+Research gap or challenge	What UrbanEnergy Insight should add
+Research focuses on a particular geographic setting	Support multiple countries, regions and cities through configurable geographic levels
+Results may depend on local building and environmental characteristics	Store relevant building and environmental context when available
+Data preparation can be difficult	Add CSV upload, column mapping, validation and data-quality reporting
+High consumption does not explain its underlying cause	Display supporting evidence and possible contributing factors
+Comparing locations with different climates can be misleading	Add contextual benchmarking and weather normalization when suitable data is available
+Prediction alone does not tell a planner what to do	Connect findings to recommendations and action plans
+Recommendations may not show their possible impact	Add a transparent what-if scenario calculator
+Research findings may be difficult for nontechnical users to interpret	Provide clear explanations, charts, confidence information and downloadable reports
+Results may not transfer reliably between locations	Evaluate performance separately across locations and disclose limitations
+
+An important research distinction: these are proposed opportunities for your application, not proof that the original authors failed to consider every feature. Your literature review identifies a need for more practical decision support, but a formal claim that the gap is novel would require a broader review of existing tools and publications.
+
+3. Does your current proposed solution overcome the research gap?
+
+Partially. It needs several additions.
+
+The three-login design is appropriate for managing the workflow, but the current feature set is closer to an energy-monitoring and planning dashboard than a complete explainable decision-support system.
+
+Here is the comparison.
+
+Capability	Existing research paper	Your current proposed solution	Recommended change
+Residential energy analysis	Yes	Yes	Keep
+Multiple contextual variables	Yes	Limited	Add optional building and environmental context
+Machine-learning analysis	Yes	Not required in the simplified version	Add an optional, evaluated prediction model if feasible
+Geographic analysis	Yes, using GIS	Interactive map	Keep and improve geographic data handling
+Data upload and validation	Research preprocessing	Yes	Keep
+High-consumption detection	Analytical modelling	Threshold-based detection	Keep, but explain the detection rule
+Explainable findings	Relationships are analysed in the research	Limited explanation	Add evidence-based explanations and contributing factors
+Multi-country use	Not established by the single-district study	Not yet designed fully	Add configurable geographic hierarchy and location-specific settings
+Fair comparisons across climates	Not established as a universal capability	Not yet included	Add contextual benchmarking and weather adjustment when supported
+Recommendations	Research informs optimization	Basic recommendations	Make recommendations traceable to findings
+What-if simulation	Not the same as a full operational planning tool	Not included in the simplified version	Add a lightweight scenario calculator
+Action tracking	Not the main focus of the study	Yes	Keep
+Cross-location evaluation	Not established by a single-district case study	Not included	Add validation metrics by location
+Actual impact measurement	Requires suitable intervention and outcome data	Not included	Track before-and-after consumption where comparable data exists
+
+The existing paper's machine-learning models and your application's threshold-based rules serve different purposes. Neither should automatically be assumed to be superior: performance must be tested using appropriate data and evaluation methods.
+
+My recommendation
+
+Keep the current architecture and three login roles, but add five capabilities:
+
+Multi-location support.
+Fair, context-aware energy benchmarking.
+Explainable consumption and anomaly analysis.
+A simple what-if improvement simulator.
+Evaluation and outcome tracking.
+
+These additions make the proposed solution more closely aligned with the research motivation without requiring you to build a complicated research platform immediately.
+
+4. How should the solution support countries, states, islands and union territories?
+
+This is one of the most important changes you requested.
+
+The application should not be designed for only one country or a fixed list of Indian states. It should support a configurable geographic hierarchy.
+
+For example:
+
+10
+Recommended geographic hierarchy
+
+Support the following levels where they are applicable:
+
+Country
+State, province, region or equivalent first-level subdivision
+Union territory or other special administrative region, where applicable
+District, county or equivalent subdivision
+City or municipality
+Urban district or neighbourhood
+Building or residential group, if the dataset permits it
+
+Islands and island groups should be represented through geographic records and relationships rather than treated as a universal administrative level.
+
+For example, India has states and union territories, while other countries use provinces, regions, territories or different administrative structures. The system should not assume that every country has the same hierarchy.
+
+Example: India
+
+A dataset could be associated with:
+
+India → Maharashtra → District → City → Urban area
+
+A union territory could be represented using the appropriate administrative level for that location.
+
+Example: another country
+
+A dataset might use:
+
+Country → Province → Municipality → Neighbourhood
+
+The same application should work with either structure.
+
+These are examples of supported data organization, not claims that the application already has complete datasets for those locations.
+
+Features to implement
+
+The Energy Analyst should be able to:
+
+Filter analytics by country.
+Select a state, province or region.
+Select a district or equivalent subdivision.
+Select a city or urban area.
+Compare selected locations when the data supports a fair comparison.
+View the geographic coverage of the available data.
+See which locations have insufficient data.
+
+The Data Manager should be able to:
+
+Import geographic identifiers and names.
+Map uploaded columns to the appropriate administrative levels.
+Validate geographic relationships.
+identify records with unknown or ambiguous locations.
+Review duplicate or conflicting geographic entries.
+
+The Energy Planner should be able to:
+
+Prioritize areas within a selected geographic scope.
+Compare priority areas across regions.
+Create actions associated with specific locations.
+Export location-specific planning reports.
+
+Do not create a separate login for every country, state, island or territory. Geography is a data and filtering feature, not an authentication role.
+
+5. A critical improvement: fair comparisons between locations
+
+Simply comparing total electricity consumption across two cities is often misleading.
+
+A large city can use more total electricity than a small city even when its residential buildings are more efficient.
+
+Similarly, a hot region may have different cooling requirements from a cooler region. Building size, household size, occupancy and the time period covered by the dataset can also affect consumption.
+
+The U.S. Department of Energy's Home Energy Score methodology illustrates the importance of accounting for climate when comparing homes. Its approach uses weather information to make comparisons more meaningful across different climates.
+
+Add these comparison methods
+A. Total consumption
+
+The sum of consumption for the selected records.
+
+Useful for understanding the overall energy demand represented by a dataset.
+
+B. Average consumption
+
+Total consumption divided by the number of valid observations, using a clearly defined observation unit.
+
+The application must distinguish between an average per record, per household and per building.
+
+C. Energy intensity
+
+Where floor-area information is available:
+
+Energy intensity = Energy consumed ÷ Floor area
+
+For example, kWh/m² over a specified period.
+
+This can help compare buildings with different floor areas, provided the data and reporting periods are comparable.
+
+D. Household-normalized consumption
+
+Where household counts are available:
+
+Average household consumption = Total household energy consumption ÷ Number of represented households
+
+The system must clearly state what the dataset represents and avoid dividing unrelated totals by household counts.
+
+E. Contextual benchmarking
+
+Compare locations with similar characteristics where possible, including:
+
+Building type.
+Building floor area.
+Reporting period.
+Household or occupancy information.
+Climate or weather conditions.
+Energy type and unit.
+F. Weather normalization
+
+Where reliable weather data and appropriate historical energy data are available, offer an optional weather-adjusted comparison.
+
+Do not automatically adjust every dataset using invented weather values or arbitrary coefficients.
+
+Important rule
+
+If the necessary contextual information is missing, display the comparison with a warning such as:
+
+These areas have different data coverage or contextual characteristics. The comparison is descriptive and may not indicate differences in energy efficiency.
+
+This makes the platform more credible than a dashboard that ranks every city using total consumption alone.
+
+6. What-if improvement simulator
+
+This is a valuable addition because it connects analytical findings to potential action.
+
+For example, suppose a dataset contains a verified baseline consumption of 10,000 kWh for a defined group of buildings over a particular period.
+
+A planner wants to examine a hypothetical 5% reduction.
+
+The calculator would estimate:
+
+Baseline consumption: 10,000 kWh.
+Assumed reduction: 5%.
+Illustrative consumption after the reduction: 9,500 kWh.
+Illustrative difference: 500 kWh.
+
+These are hypothetical scenario values, not proof that a real intervention will achieve the proposed reduction.
+
+What the simulator should do
+
+Allow the Energy Planner to:
+
+Select a building group or urban area.
+Select a baseline period.
+Enter a hypothetical percentage reduction.
+Calculate the resulting consumption estimate.
+Compare the baseline with the scenario.
+Optionally calculate estimated cost or emissions changes when valid tariff or emissions-factor data is available.
+Save the scenario with its assumptions.
+Export the scenario for reporting.
+
+The simulator must display its assumptions and distinguish estimated outcomes from measured results.
+
+It should not claim to simulate a physical building or prove that a particular intervention will deliver the predicted savings.
+
+7. Explainable analysis: what should happen when an area is flagged?
+
+Your current threshold-based detection is a reasonable MVP starting point. However, a flag alone is not enough.
+
+Suppose an area is identified as having unusually high consumption.
+
+The system should show:
+
+Observed consumption.
+Baseline consumption.
+Detection threshold.
+Reporting period.
+Data source.
+Number of observations used.
+Whether the area has sufficient data for comparison.
+Why the record was flagged.
+Potential contributing factors, if supported by the dataset.
+Suggested next steps.
+
+For example:
+
+High consumption detected: This area's observed consumption is above the selected threshold for the reporting period. The result is based on the imported dataset and the configured detection rule. Review the data coverage, building characteristics and available contextual information before concluding that the area is inefficient.
+
+If the system has no building or environmental variables, it must not invent explanations such as poor insulation, excessive appliance use or inefficient equipment.
+
+Optional machine-learning extension
+
+If time and data allow, add a prediction model as a separate analytical module.
+
+A sensible approach is to:
+
+Establish a simple baseline.
+Train a model only when the dataset is sufficient.
+Compare its performance with the baseline.
+Report MAE and RMSE for suitable prediction tasks.
+Evaluate on held-out data or an appropriate time-based split.
+Display feature explanations only when the model and available data support them.
+Disable or label the model as unavailable when there is insufficient training data.
+
+Do not claim that a model is accurate merely because it produces a prediction.
+
+8. What about existing energy-analysis tools?
+
+Your literature review focuses on research papers, but a stronger comparison should also consider established tools and methodologies.
+
+For example, the U.S. Department of Energy provides a Home Energy Score methodology that considers climate when comparing homes. Its Building Energy Data program also addresses data standards and the organization of building-energy information.
+
+A further research example is the study Generalized building energy and carbon emissions benchmarking with post-prediction analysis, which investigates benchmarking using real-world data from 12 U.S. cities and reports performance across seven climate zones. This is useful evidence that building type and climate can matter when comparing energy performance.
+
+These are useful comparators, but they do not all solve the same problem as your proposed application.
+
+Comparison of approaches
+Capability	Selected Tehran research paper	Home Energy Score methodology	Multi-city benchmarking research	Proposed UrbanEnergy Insight
+Main purpose	Study relationships between urban conditions and residential resource consumption	Assess home energy performance with climate-aware comparisons	Predict and benchmark building energy and emissions	Provide a practical urban energy analysis and planning workflow
+Geographic focus	One district in Tehran	U.S. home-scoring context	Twelve U.S. cities in the cited study	Intended to support configurable locations
+Machine learning	Yes	Not the defining feature of the scoring methodology	Yes	Optional, with baseline-first evaluation
+GIS or geographic analysis	Yes	Not the primary focus	Depends on the specific implementation	Interactive map and geographic filters
+Data validation workflow	Research preprocessing	Structured assessment process	Depends on the study's methodology	Explicit upload, validation and import history
+Climate-aware comparison	Not established as a universal capability	Yes, climate normalization is part of the methodology	Climate-zone performance is considered	Planned where appropriate data and methods are available
+Explainable user-facing results	Research analysis	Scoring and assessment results	Post-prediction analysis	Evidence, detection reasons and contextual warnings
+Recommendations and planning actions	Research implications	Assessment-oriented	Benchmarking-oriented	Explicit action planning and tracking
+What-if scenarios	Not the main focus	Not the defining feature	Not the defining feature	Lightweight scenario calculator
+Cross-country transferability	Not established	Designed for a particular national context	Evidence across U.S. cities and climate zones	Must be tested, not assumed
+
+The comparison shows that UrbanEnergy Insight should not try to reproduce every capability of an advanced energy-scoring or research platform.
+
+Its potential value is the integration of data preparation, geographic analysis, contextual comparison, explainable findings and action tracking in one accessible application.
+
+That is a proposed contribution. You should not claim that no existing product offers this combination without conducting a broader competitor review.
+
+9. Pros and cons of your proposed solution
+Advantages
+Software-only implementation; no physical sensors are required for the initial MVP.
+Three clear login roles with distinct responsibilities.
+Centralized data storage.
+CSV-based data ingestion.
+Transparent statistical analysis.
+Geographic visualization where coordinates are available.
+Support for configurable administrative regions.
+Evidence-linked recommendations and planning actions.
+Optional scenario calculations.
+Potential to evaluate the approach on datasets from multiple locations.
+Disadvantages and risks
+The system depends on the availability and quality of energy datasets.
+Cross-country data may use different formats, units and reporting periods.
+Some regions may lack building, weather or household information.
+Climate-aware comparison requires suitable data and a defensible method.
+Prediction models need sufficient data and proper evaluation.
+Geographic maps may be incomplete when coordinates are unavailable.
+What-if scenarios are estimates, not guarantees of savings.
+Multi-country support does not automatically mean the system has been validated in multiple countries.
+How to address these risks
+Risk	Recommended mitigation
+Inconsistent datasets	Standardized column mapping and validation
+Different energy units	Explicit units and controlled conversions
+Different geographic structures	Configurable administrative hierarchy
+Misleading consumption comparisons	Normalized metrics and contextual warnings
+Missing contextual variables	Show limitations and disable unsupported calculations
+Unreliable predictions	Baseline comparisons, held-out evaluation and performance reporting
+Unsupported recommendations	Link each recommendation to evidence
+Unverified energy savings	Clearly label scenario estimates and track measured outcomes separately
+10. What features should you add, keep, remove or postpone?
+
+Because your submission is imminent, I would not try to implement every advanced feature at once.
+
+Feature	Decision	Reason
+Exactly three login roles	Keep	Clear division of responsibilities
+CSV upload and validation	Keep	Essential for a functional data-driven project
+Central PostgreSQL database	Keep	Supports persistent, shared data
+Energy trends and area comparisons	Keep	Core analytics
+Interactive geographic map	Keep	Supports spatial analysis
+Transparent high-consumption detection	Keep and improve	Makes the core analysis understandable
+Configurable geographic hierarchy	Add	Enables different countries and administrative structures
+Energy intensity	Add	Supports more meaningful comparisons when floor-area data exists
+Contextual benchmarking	Add	Helps avoid misleading rankings
+Evidence-based explanations	Add	Addresses the practical interpretation gap
+Basic what-if calculator	Add	Connects findings to potential improvement scenarios
+Planning actions and milestones	Keep	Converts insights into trackable work
+Before-and-after outcome tracking	Add	Helps evaluate actual changes when comparable data is available
+Full ML model comparison	Postpone if necessary	Requires sufficient data and testing
+Advanced causal inference	Postpone	Requires stronger study designs and data
+Full physical building simulation	Remove from MVP	Too complex for the immediate goal
+Live meter monitoring	Postpone	Requires an authorized live data source
+Guaranteed savings predictions	Remove	Unsupported without validation
+Extra login roles	Remove	You explicitly require only three
+
+Recommended MVP: build the first ten core capabilities, then add the scenario calculator and outcome tracking if time permits. Treat advanced prediction and climate normalization as conditional features that become active only when the required data and implementation are available.
+
+11. Final master prompt for Google AI Studio
+
+This prompt incorporates the research comparison, the new geographic requirements, and the feature changes while preserving your three-login structure and multicolour UI.
+
+UrbanEnergy Insight — Research-Aligned Master Development Prompt
+PROJECT: UrbanEnergy Insight
+Project title
+
+UrbanEnergy Insight: Explainable, Multi-Region Urban Residential Energy Analytics and Improvement Planning
+
+Tagline: Understand Your Energy. Find the Problem. Improve It.
+
+1. Your task
+
+Build a completely new, independent, functional web application named UrbanEnergy Insight.
+
+Do not reuse code, assets, database schemas or components from previous projects.
+
+The application must be based on the project requirements and research motivation described below.
+
+The main objective is to convert residential energy datasets into validated, geographically organized, understandable analytical findings that can support urban energy improvement planning.
+
+The application should integrate:
+
+Data ingestion and validation.
+Energy-consumption analysis.
+Geographic visualization.
+High-consumption and anomaly detection.
+Contextual benchmarking.
+Explainable findings.
+Evidence-based recommendations.
+A lightweight what-if scenario calculator.
+Planning actions and milestones.
+Reporting and outcome tracking.
+
+Build a reliable MVP first. Do not create elaborate features that cannot be implemented, tested and explained.
+
+Do not claim that the application has overcome every research gap until the corresponding functionality has been implemented and evaluated.
+
+2. Research foundation
+
+Use the following research paper as the primary research motivation:
+
+Ali Shamaei and Kamran Jafarpour Ghalehteimouri (2026), "Machine learning-based analysis of urban regeneration and household energy consumption for sustainable energy optimization in deteriorated urban areas," published in City and Built Environment.
+
+The paper studies residential water, electricity and gas consumption in District 10 of Tehran using GIS, contextual variables and machine-learning methods including Random Forest, Multi-Layer Perceptron and Gaussian Process variants.
+
+The research motivates further work on accessible, explainable and practical urban energy decision support.
+
+Design UrbanEnergy Insight as a complementary software application, not a reproduction of the paper.
+
+Potential contributions include:
+
+A reusable data-import and validation workflow.
+Configurable geographic hierarchies.
+Transparent consumption and anomaly analysis.
+Context-aware comparisons.
+Evidence-linked explanations.
+Recommendations connected to planning actions.
+What-if scenario calculations.
+Outcome tracking.
+Evaluation across multiple geographic contexts.
+
+Do not claim that these features are unique to the world or absent from all existing tools.
+
+Do not invent research results, dataset sources, model accuracy, savings, citations or experimental findings.
+
+Create a Research Context page or section that distinguishes:
+
+Findings reported in existing literature.
+Features implemented in the application.
+Features that are planned but not yet implemented.
+Results established by actual evaluation.
+3. Exactly three login roles
+
+Create exactly three primary roles:
+
+Energy Analyst — energy_analyst.
+Data Manager — data_manager.
+Energy Planner & Administrator — planner_admin.
+
+Do not add citizen, guest, public-user or fourth administrator login types.
+
+Use one shared authentication system.
+
+The third role must support separate planning and administrator permissions. A planner must not automatically receive administrator privileges.
+
+Use server-side authentication, password hashing, secure session handling and backend authorization.
+
+Development-only demo accounts:
+
+analyst@demo.local
+datamanager@demo.local
+planneradmin@demo.local
+
+Development demo password:
+demo123
+
+Seed passwords as secure hashes. Seed users idempotently and do not enable development credentials in production.
+
+4. Modern multicolour UI/UX
+
+Create a polished, modern, professional interface.
+
+Use this palette:
+
+Midnight Navy #101828
+Deep Blue #172554
+Cobalt #3B5BDB
+Lavender #E9E7FF
+Violet #7C3AED
+Coral #FF7A70
+Peach #FFE1D6
+Teal #0F9D91
+Mint #D7F5E9
+Warm Ivory #FAF7F2
+White #FFFFFF
+Cool Grey #E8ECF2
+Slate #667085
+Amber #F4B740
+
+Do not use green as the only dominant colour.
+
+Use a balance of dark navigation and hero sections with light content areas. Use cobalt for primary actions, violet and coral for selected highlights, teal for energy indicators, and amber for warnings.
+
+Create:
+
+Responsive landing page.
+Attractive login page.
+Three role-specific dashboards.
+Reusable charts, tables, filters, cards and forms.
+Helpful loading, empty, success and error states.
+Accessible labels and colour contrast.
+
+Test mobile, tablet, laptop and desktop layouts.
+
+The landing page must explain the problem, research motivation, core features, workflow and three login roles.
+
+Do not invent testimonials, statistics, real users or energy savings.
+
+5. Multi-country and multi-region geographic architecture
+
+This is a core requirement.
+
+The application must not be hard-coded for one city, country, state or administrative structure.
+
+Support configurable geographic levels such as:
+
+Country.
+State, province, region or equivalent.
+Union territory or special administrative region, where applicable.
+District, county or equivalent.
+City or municipality.
+Urban district or neighbourhood.
+Building or residential group, if available.
+
+Do not assume that every country uses the same administrative hierarchy.
+
+Allow an authorized Data Manager to map source geographic fields into the application's geographic hierarchy.
+
+Represent geographic relationships in the database rather than hard-coding a fixed list of locations into the frontend.
+
+Support location filters throughout the analyst and planner dashboards.
+
+Users should be able to filter by the available geographic levels and compare locations where sufficient compatible data exists.
+
+Provide an administrative-data configuration approach that can accommodate different countries without changing the application code for every new region.
+
+Store, where available:
+
+Geographic name.
+Geographic level.
+Parent geographic record.
+Country or jurisdiction code.
+Source identifier.
+Latitude and longitude.
+Time zone where relevant.
+Data provenance.
+Geographic validation status.
+
+Do not invent locations or coordinates.
+
+If geographic records cannot be matched reliably, display them as unresolved and allow correction.
+
+If a map cannot display a record because coordinates are missing, preserve its analytical availability and explain why it is absent from the map.
+
+Geographic support is a data-management capability, not a separate login role.
+
+6. Standardized energy data model
+
+Design a consistent energy data schema.
+
+Support, where available:
+
+Observation date or period.
+Geographic identifier.
+Building or residential group identifier.
+Energy type.
+Consumption value.
+Consumption unit.
+Building type.
+Floor area.
+Household count.
+Occupancy information.
+Weather or climate information.
+Data source.
+Import identifier.
+Validation status.
+
+The first MVP may focus on residential electricity consumption.
+
+Keep the schema extensible so that water, gas and other resource types can be supported later without pretending they are already fully implemented.
+
+Use explicit units and reporting periods.
+
+Validate compatible units before aggregation or comparison.
+
+If a dataset does not contain floor area, household count or weather information, do not invent these values.
+
+Record which optional variables are present and which are missing.
+
+Support CSV upload, preview, column mapping, validation, error review and persistent import.
+
+Store valid records in PostgreSQL.
+
+Use transactions for import operations and report actual accepted and rejected record counts.
+
+Never silently discard invalid rows.
+
+7. Data quality and validation
+
+Implement:
+
+Required-column checks.
+Date validation.
+Numeric-value validation.
+Negative-consumption checks.
+Unit validation.
+Duplicate detection.
+Geographic identifier validation.
+Coordinate validation.
+Missing-value reporting.
+Import summary and history.
+
+Create a data-quality summary for each dataset.
+
+Display the number and percentage of valid, invalid, missing and duplicate records where these values can be calculated.
+
+Allow authorized correction and revalidation.
+
+Do not automatically fill missing values unless a documented, configurable method is explicitly selected.
+
+If imputation is implemented, preserve the original value and clearly label the imputed value and method.
+
+Keep an auditable record of important corrections and imports.
+
+8. Energy Analyst dashboard
+
+Dashboard title: Energy Intelligence Center.
+
+Navigation:
+
+Dashboard.
+Energy Trends.
+Geographic Comparison.
+Energy Map.
+High-Consumption Analysis.
+Explanations.
+Reports.
+Logout.
+Overview
+
+Display:
+
+Total consumption.
+Average consumption with a clearly defined observation unit.
+Number of represented areas.
+Number of flagged areas.
+Data-quality summary.
+Latest successful data refresh.
+Trends
+
+Provide daily, monthly or yearly charts only when the imported data supports the requested time resolution.
+
+Show units, selected periods, filters and data source.
+
+Geographic analysis
+
+Provide country, region, district, city and neighbourhood filters according to the hierarchy available in the dataset.
+
+Allow users to compare compatible geographic scopes.
+
+Display data coverage and warn users when locations have different reporting periods or incomplete records.
+
+Map
+
+Use Leaflet and a permitted map tile provider.
+
+Show attribution.
+
+Support zoom, pan, filters, area markers and informative popups.
+
+Highlight flagged areas with an accessible legend.
+
+Do not invent coordinates or present approximate points as verified locations.
+
+High-consumption detection
+
+Implement a transparent configurable rule, such as a selected percentile, a defined threshold or a baseline-relative deviation.
+
+Explain:
+
+The observed value.
+The baseline.
+The threshold.
+The period.
+The unit.
+The rule used.
+The number of observations considered.
+
+Avoid automatically labelling high consumption as waste or inefficiency.
+
+Allow analysts to inspect the underlying records.
+
+9. Contextual benchmarking
+
+Implement contextual comparison as a core analytical feature.
+
+Offer the following metrics when the necessary inputs are available:
+
+A. Total consumption.
+
+B. Average consumption, with a clearly defined observation unit.
+
+C. Energy intensity, such as kWh/m² over a specified period, when floor-area data is available.
+
+D. Average household consumption when valid household counts and compatible consumption totals are available.
+
+E. Comparison against similar building types or comparable geographic groups when the necessary fields are available.
+
+F. Optional weather-normalized comparisons when reliable weather data and a suitable adjustment method are available.
+
+Never divide unrelated totals by arbitrary denominators.
+
+Do not compare different energy types or incompatible units without a valid conversion method.
+
+Clearly distinguish raw consumption from normalized consumption.
+
+Show a warning when differences in climate, building type, occupancy, reporting periods or data coverage make comparisons uncertain.
+
+If a required variable is unavailable, disable the relevant normalized metric and explain why.
+
+Do not claim that a location is more energy-efficient merely because its total consumption is lower.
+
+10. Explainable analysis
+
+Create an explanation panel for each important analytical finding.
+
+For every flagged area, show:
+
+The observation.
+The baseline or comparison group.
+The detection method.
+The period and unit.
+The relevant supporting records.
+Available contextual variables.
+Data-quality limitations.
+Suggested follow-up actions.
+
+If the system has evidence of a relationship, describe it accurately.
+
+Do not claim causation from correlation alone.
+
+Do not invent explanations about insulation, appliances, occupancy, weather or building efficiency when those factors are absent from the data.
+
+Clearly separate:
+
+Observed facts.
+Statistical findings.
+Possible explanations.
+Recommendations.
+Unverified hypotheses.
+11. Optional machine-learning module
+
+Use a baseline-first approach.
+
+Implement machine learning only if it can be trained and evaluated with the available data.
+
+Possible later capabilities:
+
+Consumption forecasting.
+Anomaly detection.
+Feature-importance analysis.
+Model comparison.
+
+Before using a model:
+
+Check whether the dataset has sufficient usable observations.
+Define the prediction target.
+Establish a simple baseline.
+Use an appropriate train/test split.
+Prevent data leakage.
+Report suitable evaluation metrics.
+Compare the model against the baseline.
+Document the evaluation period and dataset.
+
+For supported prediction tasks, report metrics such as MAE and RMSE.
+
+Do not display fabricated accuracy percentages.
+
+If there is insufficient data, retain transparent statistical analysis and explain that the model is unavailable.
+
+Do not require a complex machine-learning stack for the basic MVP.
+
+12. Evidence-based recommendations
+
+Generate practical recommendations from actual findings and configured rules.
+
+Each recommendation must contain:
+
+Related finding.
+Target location.
+Reason for the recommendation.
+Supporting evidence.
+Suggested action.
+Priority.
+Limitations or assumptions.
+
+Recommendations may include:
+
+Investigate unusually high consumption.
+Review data quality.
+Compare similar buildings.
+Assess possible efficiency interventions.
+Monitor consumption after an intervention.
+
+Do not guarantee energy savings.
+
+Do not invent monetary benefits or carbon reductions.
+
+Where cost or emissions calculations are supported by reliable tariff or emissions-factor data, identify the source, unit and assumptions.
+
+13. What-if scenario calculator
+
+Implement a lightweight scenario calculator.
+
+Allow the Energy Planner to:
+
+Select an area or building group.
+Select a baseline period.
+Enter a hypothetical percentage reduction.
+Calculate illustrative post-intervention consumption.
+Compare baseline and scenario results.
+Display the absolute and percentage difference.
+Save scenario assumptions.
+Export scenario results.
+
+Use transparent arithmetic.
+
+For example:
+
+Illustrative baseline consumption: 10,000 kWh.
+Hypothetical reduction: 5%.
+Illustrative scenario consumption: 9,500 kWh.
+Illustrative difference: 500 kWh.
+
+Label all such outputs as hypothetical estimates.
+
+Do not claim that a scenario proves an intervention will achieve the entered reduction.
+
+Allow optional cost or emissions estimates only when the necessary input factors are available and documented.
+
+Do not build a complex physical building simulator for the MVP.
+
+14. Energy Planner dashboard
+
+Dashboard title: Urban Planning & Control Center.
+
+Navigation:
+
+Dashboard.
+Priority Assessment.
+Recommendations.
+Action Planning.
+Timeline.
+Scenario Analysis.
+Planning Reports.
+Outcome Tracking.
+Logout.
+
+Allow the planner to:
+
+Review flagged locations.
+Inspect supporting findings.
+Assign priorities.
+Create improvement actions.
+Assign responsible people or teams where configured.
+Set due dates.
+Add milestones.
+Track action status.
+Save scenarios.
+Export planning reports.
+
+Supported statuses:
+
+Proposed.
+Planned.
+In Progress.
+Completed.
+On Hold.
+
+Persist all actions, milestones and scenarios in PostgreSQL.
+
+Ensure that saved actions remain available after refresh and subsequent login.
+
+15. Outcome tracking
+
+Where comparable pre-intervention and post-intervention records exist, allow the planner to record an intervention and review observed consumption changes.
+
+Display:
+
+Baseline period.
+Follow-up period.
+Baseline consumption.
+Follow-up consumption.
+Absolute difference.
+Percentage difference, when mathematically valid.
+Data coverage.
+Relevant contextual differences.
+Notes about other possible influences.
+
+Distinguish observed change from proven causal impact.
+
+Do not attribute all observed changes to the intervention without an appropriate evaluation design.
+
+If follow-up data is unavailable, display the outcome as pending rather than inventing results.
+
+16. Data Manager dashboard
+
+Dashboard title: Energy Data Workspace.
+
+Navigation:
+
+Dashboard.
+Upload Dataset.
+Column Mapping.
+Data Validation.
+Dataset Management.
+Geographic Data.
+Import History.
+Logout.
+
+Implement the complete CSV workflow:
+
+Upload.
+Preview.
+Column mapping.
+Validation.
+Error review.
+Correction.
+Confirmation.
+Database import.
+Import history.
+
+Allow authorized users to map source geographic columns to the configurable geographic hierarchy.
+
+Display data-quality information and missing contextual variables.
+
+The Data Manager must not automatically receive administrator permissions.
+
+17. Administrator-only capabilities
+
+The third primary role may include administrator functionality when the user has explicit administrator permissions.
+
+Features:
+
+User management.
+Permission management.
+Audit logs.
+Basic system health.
+Geographic hierarchy configuration where authorized.
+Data-source and unit configuration where authorized.
+
+Do not create a fourth login role.
+
+Enforce all administrator permissions in the backend.
+
+A planner without administrator permission must not access administrator APIs or screens.
+
+18. Reporting
+
+Support CSV export for:
+
+Energy summaries.
+Trends.
+Geographic comparisons.
+Flagged areas.
+Data-quality results.
+Planning actions.
+Scenario calculations.
+Outcome tracking.
+
+Use actual database records.
+
+Include reporting period, units, selected geographic scope and relevant assumptions.
+
+Handle empty reports and export failures properly.
+
+19. Shared database
+
+Use PostgreSQL as the authoritative database.
+
+Create suitable migrations and relational constraints.
+
+Minimum tables should include:
+
+users.
+geographic_areas.
+datasets.
+energy_records.
+validation_results.
+import_history.
+analysis_runs or analysis_results where needed.
+recommendations.
+planning_actions.
+planning_milestones.
+scenarios.
+intervention_outcomes.
+audit_logs.
+
+Add additional tables only when required by the implementation.
+
+Use foreign keys, indexes, parameterized queries, transactions and appropriate access controls.
+
+Store secrets in environment variables.
+
+Create a .env.example file.
+
+Do not use browser localStorage as a replacement for persistent database storage.
+
+20. Technical stack
+
+Preferred:
+
+React.
+TypeScript.
+Vite.
+React Router.
+Node.js.
+Express.
+PostgreSQL.
+Recharts.
+Leaflet and React Leaflet.
+Lucide icons.
+Responsive CSS.
+
+Use a maintainable project structure.
+
+Keep the application independent of any one country's geography.
+
+Do not hard-code sample analytics into the production dashboard.
+
+Clearly label demonstration data.
+
+21. Refresh and data integrity
+
+After a successful import:
+
+Refresh data-quality information.
+Refresh energy metrics.
+Refresh trends and geographic comparisons.
+Recalculate applicable detection results.
+Make new findings available to the planner.
+
+After a planning update:
+
+Refresh action counts and planning reports.
+
+Display the last successful refresh time.
+
+If a database write fails, do not show a success message.
+
+Do not claim to provide live meter readings unless a real authorized energy data source is connected.
+
+22. Security and error handling
+
+Implement:
+
+Secure authentication.
+Backend authorization.
+Input validation.
+Parameterized database queries.
+Session handling.
+Clear validation errors.
+Database error handling.
+Import failure handling.
+Empty states.
+Missing-data warnings.
+Permission-denied screens.
+
+Never store plaintext passwords.
+
+Do not expose sensitive information in error messages or audit logs.
+
+23. Evaluation and testing
+
+Create a test plan that evaluates both functionality and the research motivation.
+
+Functional tests:
+
+Log in through each of the three roles.
+Confirm role-specific navigation and permissions.
+Upload a valid CSV.
+Reject or flag invalid records correctly.
+Verify persistence in PostgreSQL.
+Confirm that analyst metrics use saved data.
+Verify geographic filtering.
+Confirm that comparisons show appropriate limitations.
+Create and save a planning action.
+Calculate and save a scenario.
+Export a report.
+Confirm that unauthorized requests are rejected.
+
+Analytical evaluation:
+
+Compare high-consumption results with the configured baseline rule.
+Verify metric calculations using known test data.
+Evaluate model predictions only if a model has actually been implemented.
+Test whether geographic filters return the correct records.
+Compare normalized metrics with independently calculated test values.
+Document missing variables and unsupported comparisons.
+
+Multi-location evaluation:
+
+Use multiple datasets only when suitable data is available.
+Evaluate each location separately.
+Report differences in data quality and coverage.
+Do not claim universal transferability from a single dataset.
+Do not invent evaluation results.
+
+Create a concise evaluation report that identifies:
+
+Implemented features.
+Tests actually executed.
+Results actually observed.
+Known limitations.
+Further research needed.
+24. Implementation priority
+
+Build in this order:
+
+Project structure and startup.
+PostgreSQL schema and migrations.
+Three-role authentication.
+Landing page and multicolour UI.
+Data upload and validation.
+Geographic hierarchy and filtering.
+Energy analytics.
+Transparent high-consumption detection.
+Contextual benchmarking.
+Interactive map.
+Explanation panels.
+Planning actions and milestones.
+Basic scenario calculator.
+CSV reports.
+Outcome tracking if time permits.
+Optional evaluated prediction model.
+Tests and responsive refinements.
+
+If time or data is insufficient for an advanced capability, document it as a limitation rather than creating a fake implementation.
+
+25. Final deliverables
+
+Provide:
+
+Complete source code.
+Database migrations.
+Seed scripts.
+Demo accounts.
+Environment configuration instructions.
+Installation and startup instructions.
+Description of the three roles.
+Database schema summary.
+Research-gap-to-feature mapping.
+Test results actually obtained.
+Known limitations and future scope.
+
+The final result must be a functional MVP that demonstrates how validated residential energy data can be transformed into geographically organized, explainable findings and practical improvement plans.
+
+Prioritize reliable data processing, correct comparisons, clear explanations, persistent planning actions and honest evaluation over decorative features or unsupported AI claims.
+
+12. How to explain your research contribution to the evaluator
+
+Your project should not claim that it has already solved every limitation of the existing paper. A stronger and more defensible explanation is:
+
+Proposed contribution: UrbanEnergy Insight extends the analytical motivation of existing urban residential energy research into an integrated software workflow. It combines validated energy-data ingestion, configurable geographic analysis, contextual benchmarking, explainable high-consumption detection, evidence-based planning, and scenario estimation. Its intended advantage is accessibility and practical decision support, while its ability to generalize across countries and regions must be established through evaluation on suitable datasets.
+
+You can also organize your future scope into three phases:
+
+Phase 1 — MVP: CSV validation, persistent energy records, three login roles, analytics, geographic filters, high-consumption detection and planning actions.
+Phase 2 — Research extension: Contextual benchmarking, weather normalization, explainable prediction and scenario analysis.
+Phase 3 — Validation and expansion: Evaluate across multiple cities, states, territories, islands and countries; measure data-transferability limitations; integrate additional resource types and reliable external data sources.
+
+My final recommendation: Keep the three logins and the redesigned UI. Add configurable geography, data-quality reporting, fair benchmarking and evidence-based explanations to the core application. Implement the simple scenario calculator if possible. Treat advanced machine learning and weather normalization as conditional features, because an incomplete or unvalidated model would weaken rather than strengthen your research claim.
